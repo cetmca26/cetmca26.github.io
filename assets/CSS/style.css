@@ -1,0 +1,39 @@
+body {
+    background-color: #f8f9fa;
+  }
+  .welcome-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: white;
+  }
+  .welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .welcome-section p {
+    font-size: 1.5rem;
+  }
+  .repo-card {
+    transition: transform 0.2s;
+  }
+  .repo-card:hover {
+    transform: scale(1.05);
+  }
+  footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  .about-us-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+  }
+  .about-us-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .about-us-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+  }
