@@ -1,17 +1,36 @@
-body {
-    background-color: #f8f9fa;
+  body{
+    background-color: white;
+    color: black;
   }
+  .darkmode{
+    
+    color: rgb(79, 79, 79);
+  
+  }
+  #changingtext::after {
+    content: '|'; /* Cursor character */
+    animation: blink 0.75s step-end infinite; /* Blinking effect */
+  }
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
   .welcome-section {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(45deg, #007bff, #6610f2);
+    background: linear-gradient(45deg, #7ab8ff, #6200ff);
     color: white;
   }
+  
   .welcome-section h1 {
     font-size: 3rem;
     margin-bottom: 10px;
   }
   .welcome-section p {
+    
     font-size: 1.5rem;
   }
   .repo-card {
