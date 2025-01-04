@@ -60,8 +60,11 @@ typeText();
 // Array of texts to display
 const aboutTexts = [
     "Welcome to the CET MCA 26 Community! We are a vibrant group of tech enthusiasts, innovators, and learners united by our journey in the MCA program at CET. Our mission is to foster collaboration, share knowledge, and build a strong foundation in the world of technology.",
+
     "Join us as we explore the world of technology and learn together. Collaboration, innovation, and growth are at the heart of our community.",
+
     "Contribute to open-source projects, learn new technologies, and showcase your skills as part of the CET MCA 26 community.",
+
     "Our mission is to empower students with the resources they need to succeed and create a supportive space for innovation and growth."
 ];
 
@@ -77,3 +80,5 @@ function changeText() {
     // Update the current index to cycle through the texts
     currentIndex = (currentIndex + 1) % aboutTexts.length;  // Loop back to the first text when the last one is reached
 }
+changeText();
+setInterval(changeText, 8000);
