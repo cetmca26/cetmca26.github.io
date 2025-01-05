@@ -24,6 +24,41 @@ const projects = [
     
   ];
 
+
+// Function to fetch project details from GitHub
+async function fetchGitHubProjectDetails(repoUrl) {
+  const apiBaseUrl = "https://api.github.com/repos/";
+  
+  // Extract owner and repo name from the GitHub URL
+  const [owner, repo] = repoUrl.replace("https://github.com/", "").split("/");
+
+  try {
+    // Fetch repository details
+    const repoResponse = await fetch(`${apiBaseUrl}${owner}/${repo}`);
+    const repoData = await repoResponse.json();
+
+    // Fetch contributors
+    const contributorsResponse = await fetch(`${apiBaseUrl}${owner}/${repo}/contributors`);
+    const contributorsData = await contributorsResponse.json();
+
+    // Prepare project details
+    const projectDetails = {
+      name: repoData.name || "Unknown Project",
+      description: repoData.description || "No description provided.",
+      image: "https://via.placeholder.com/400x300?text=" + encodeURIComponent(repoData.name || "Project"),
+      link: repoData.html_url,
+      contributors: contributorsData.map(contributor => contributor.avatar_url)
+    };
+
+    // Push to projects array
+    projects.push(projectDetails);
+    console.log(`Project ${repoData.name} added successfully!`);
+  } catch (error) {
+    console.error("Error fetching project details:", error);
+  }
+}
+
+
   // Function to add project cards
   function addProjectCards() {
     const container = document.getElementById('projects-container');
@@ -52,5 +87,9 @@ const projects = [
     });
   }
 
-  // Call function to add cards
+// Fetch GitHub project details and add them dynamically
+fetchGitHubProjectDetails("https://github.com/cetmca26/MCA-Laboratory").then(() => {
+  // Add project cards after fetching data
   addProjectCards();
+});
+  
