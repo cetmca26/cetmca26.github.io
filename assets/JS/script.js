@@ -1,3 +1,12 @@
+// Model 
+
+window.addEventListener('load', function () {
+    var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+    myModal.show();
+});
+
+
+
 function darkmode(){
     var element = document.body;
     element.classList.toggle("darkmode")
