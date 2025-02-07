@@ -1,3 +1,16 @@
+const audio = document.getElementById('background-music');
+const playPauseBtn = document.getElementById('playPauseBtn');
+
+playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+    } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+    }
+});
+
 
 // <![CDATA[
 var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c'); // colours of the hearts
