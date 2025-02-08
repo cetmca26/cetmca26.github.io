@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/logonobg.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Loader from "./components/loader/Loader";
+import Header from "./components/navbar/Navbar";
+import Page from "./components/main/Page";
+import Footer from "./components/footer/Footer";
+
 import "./App.css";
 
 function App() {
@@ -11,7 +16,7 @@ function App() {
     const fakeDataFetch = () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000);
+      }, 1500);
     };
     fakeDataFetch();
   }, []);
@@ -19,7 +24,16 @@ function App() {
   return isLoading ? (
     <Loader />
   )  : (
-    <h1>Welcome</h1>
+    <>
+    
+    <div className="hero-anime">
+    <Header />
+    <Page />
+
+    <Footer />
+    </div>
+   
+    </>
   );
 }
 
