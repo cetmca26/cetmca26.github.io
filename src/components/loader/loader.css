@@ -1,0 +1,30 @@
+#root {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+ 
+  .loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #09d3d3; /* Dark Green */
+    border-radius: 50%;
+    width: 8em;
+    padding: 1.5em;
+    height: 8em;
+    animation: spinloader 2s linear infinite;
+}
+.loader img{
+    height : 8em;
+    width : 8em;
+    animation: spinlogo 2s linear infinite;
+}
+@keyframes spinloader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes spinlogo {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
