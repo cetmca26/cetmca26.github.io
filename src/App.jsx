@@ -7,6 +7,10 @@ import Page from "./components/main/Page";
 import Footer from "./components/footer/Footer";
 import AboutUsCard from "./components/main/AboutUsCard";
 import CommunityProjects from "./components/main/CommunityProjects";
+import ContributingRule from "./components/main/ContributingRule";
+import SemesterPrograms from "./components/main/SemesterPrograms";
+import Team from "./components/main/Team";
+import Notes from "./components/main/Notes";
 import "./App.css";
 
 function App() {
@@ -18,7 +22,15 @@ function App() {
       case 'about':
         return <AboutUsCard />;
       case 'projects':
-        return <CommunityProjects/>
+        return <CommunityProjects/>;
+      case 'rules':
+        return <ContributingRule/>;
+      case 'lab':
+        return <SemesterPrograms/>;
+      case 'team':
+        return <Team/>;
+      case 'notes':
+        return <Notes/>
       case 'home':
       default:
         return <Page />;

@@ -113,7 +113,7 @@ const Navbar = ({ onNavigate }) => {
                         <hr className="dropdown-divider" />
                       </li>
                       <li>
-                        <a className="dropdown-item" href="https://github.com/cetmca26/MCA-Laboratory/blob/main/CONTRIBUTING.md">
+                        <a className="dropdown-item" onClick={() => onNavigate('rules')}>
                           How to Contribute?
                         </a>
                       </li>
@@ -130,26 +130,27 @@ const Navbar = ({ onNavigate }) => {
                     </a>
                   </li>
                   <li className="nav-item ps-4 ps-md-0 ms-0 ms-md-4 me-1">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="#" onClick={() => onNavigate('lab')}>
                       Lab
                     </a>
                   </li>
                   <li className="nav-item ps-4 ps-md-0 ms-0 ms-md-4 me-1 dropdown">
                     <a
                       className="nav-link dropdown-toggle"
-                      href="#"
+                      href="https://cetmca26.live/Study-Materials/"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      onClick={() => onNavigate('notes')}
                     >
                       Notes
                     </a>
                     <div className="dropdown-menu">
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" href="https://cetmca26.live/Study-Materials/materials.html">
                         Semester 1
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" href="https://cetmca26.live/Study-Materials/materials.html">
                         Semester 2
                       </a>
                       <a className="dropdown-item" href="#">
@@ -161,7 +162,7 @@ const Navbar = ({ onNavigate }) => {
                     </div>
                   </li>
                   <li className="nav-item ps-4 ps-md-0 ms-0 ms-md-4 me-1">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="#" onClick={() => onNavigate('team')}>
                       Meet the team
                     </a>
                   </li>
