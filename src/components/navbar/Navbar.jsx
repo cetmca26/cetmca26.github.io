@@ -3,7 +3,7 @@ import "./Navbar.css";
 import $ from "jquery";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-function Navbar() {
+const Navbar = ({ onNavigate }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -94,17 +94,18 @@ function Navbar() {
                       data-bs-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      onClick={() => onNavigate('home')}
                     >
                       Home
                     </a>
                     <ul className="dropdown-menu">
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item" href="#" onClick={() => onNavigate('about')}>
                           About Us
                         </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item" href="https://github.com/cetmca26">
                           Github
                         </a>
                       </li>
@@ -112,7 +113,7 @@ function Navbar() {
                         <hr className="dropdown-divider" />
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item" href="https://github.com/cetmca26/MCA-Laboratory/blob/main/CONTRIBUTING.md">
                           How to Contribute?
                         </a>
                       </li>

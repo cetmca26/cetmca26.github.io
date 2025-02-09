@@ -1,0 +1,108 @@
+/* From Uiverse.io by vinodjangid07 */ 
+.button {
+    width: 110px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgb(161, 255, 20);
+    border-radius: 30px;
+    color: rgb(19, 19, 19);
+    font-weight: 600;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition-duration: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+    padding-left: 8px;
+    transition-duration: .5s;
+  }
+  
+  .svgIcon {
+    height: 25px;
+    transition-duration: 1.5s;
+  }
+  
+  .bell path {
+    fill: rgb(19, 19, 19);
+  }
+  
+  .button:hover {
+    background-color: rgb(192, 255, 20);
+    transition-duration: .5s;
+  }
+  
+  .button:active {
+    transform: scale(0.97);
+    transition-duration: .2s;
+  }
+  
+  .button:hover .svgIcon {
+    transform: rotate(250deg);
+    transition-duration: 1.5s;
+  }
+  
+  
+
+
+  /* From Uiverse.io by JaydipPrajapati1910 */ 
+#dbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px #000;
+    text-transform: uppercase;
+    border: solid 2px #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: rgba(88, 101, 242, 1);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease;
+  }
+  
+  #dbutton:active {
+    transform: scale(.9);
+    transition: all 100ms ease;
+  }
+  
+  #dbutton svg {
+    transition: all .5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all .5s ease;
+    transition-delay: 300ms;
+  }
+  
+  #dbutton:hover svg {
+    transform: scale(1.3) translate(-40%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(290%);
+    transition: all .5s ease;
+    z-index: 2;
+  }
+  
+  #dbutton:hover .now {
+    transform: translateX(90%);
+    transition-delay: 300ms;
+  }
+  
+  #dbutton:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+  
+  
+  
