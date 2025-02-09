@@ -6,6 +6,7 @@ import Header from "./components/navbar/Navbar";
 import Page from "./components/main/Page";
 import Footer from "./components/footer/Footer";
 import AboutUsCard from "./components/main/AboutUsCard";
+import CommunityProjects from "./components/main/CommunityProjects";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
     switch (activeComponent) {
       case 'about':
         return <AboutUsCard />;
+      case 'projects':
+        return <CommunityProjects/>
       case 'home':
       default:
         return <Page />;

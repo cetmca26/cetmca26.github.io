@@ -1,0 +1,115 @@
+
+/* Community Projects Section */
+
+  /* Project Card Styling */
+  .project-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #28cee3;
+    overflow: hidden;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Project Image */
+  .project-card img.card-img-top {
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #28cee3;
+  }
+  
+  /* Project Details */
+  .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+   
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+/* Contributers  */
+.contributors-section {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    
+    border-top: 1px solid #ddd;
+    overflow-x: auto;   /* Enable horizontal scrolling */
+    scrollbar-width: thin;  /* For Firefox */
+    scrollbar-color: #28cee3 #f1f1f1; /* Scrollbar colors */
+  }
+  
+  .contributors-section::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height for Chrome/Safari */
+  }
+  
+  .contributors-section::-webkit-scrollbar-thumb {
+    background-color: #28cee3;  /* Scrollbar thumb color */
+    border-radius: 4px;
+  }
+  
+  .contributors-section::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
+  
+  .contributors-wrapper {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .contributors-section a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .contributors-section a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .contributors-section a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Spinner Centering */
+  .d-flex.justify-content-center {
+    padding: 50px 0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .card-title {
+      font-size: 1.1rem;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  
+    .contributors-section a img {
+      width: 35px;
+      height: 35px;
+    }
+  }

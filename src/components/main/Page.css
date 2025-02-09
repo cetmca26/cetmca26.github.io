@@ -195,6 +195,14 @@ body.dark{
 body.dark .navbar-brand img{
   filter: brightness(100%);
 }
+body.dark .card{
+	background-color: #21252400;
+	color:white;
+	border: 1px solid #28cee3;
+}
+body.dark .card-text{
+	color: white;
+}
 body.dark h1{
 	color: #fff;
 }
