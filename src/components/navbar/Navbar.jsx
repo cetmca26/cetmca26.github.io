@@ -58,7 +58,7 @@ const Navbar = ({ onNavigate }) => {
             <nav className="navbar navbar-expand-md navbar-expand-lg">
               <a className="navbar-brand">
                 <img
-                  src="../src/assets/logotext.png"
+                  src="../../public/logotext.png"
                   alt="Logo"
                   id="logo"
                   style={{
