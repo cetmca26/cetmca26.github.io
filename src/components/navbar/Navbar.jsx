@@ -194,7 +194,7 @@ const Navbar = ({ onNavigate }) => {
                     </a>
                   </li>
                   <li className="nav-item ps-4 ps-md-0 ms-0 ms-md-4 me-1">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="#" onClick={() => onNavigate('contact')}>
                       Join Us
                     </a>
                   </li>

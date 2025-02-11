@@ -48,7 +48,7 @@ const Team = () => {
           <Col lg={7} className="text-center">
             <h6 className="text-primary text-uppercase">Our Contributors</h6>
             <h2>Meet the Team</h2>
-            <p className="text-muted">These individuals contributed to the MCA Laboratory repository with dedication and excellence.</p>
+            <p className="card-text">These individuals contributed to the MCA Laboratory repository with dedication and excellence.</p>
           </Col>
         </Row>
 
