@@ -140,6 +140,11 @@ const Navbar = ({ onNavigate }) => {
                         </a>
                       </li>
                       <li>
+                        <a className="dropdown-item" onClick={() => onNavigate('contact')}>
+                          Contact Us
+                        </a>
+                      </li>
+                      <li>
                         <a className="dropdown-item" href="#">
                           Get Started
                         </a>

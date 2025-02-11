@@ -11,6 +11,7 @@ import ContributingRule from "./components/main/ContributingRule";
 import SemesterPrograms from "./components/main/SemesterPrograms";
 import Team from "./components/main/Team";
 import Notes from "./components/main/Notes";
+import Contact from "./components/main/Contact";
 import "./App.css";
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         return <Team/>;
       case 'notes':
         return <Notes/>
+      case 'contact':
+        return <Contact/>
       case 'home':
       default:
         return <Page onNavigate={setActiveComponent}/>;
