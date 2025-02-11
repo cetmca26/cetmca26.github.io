@@ -49,7 +49,7 @@ const Navbar = ({ onNavigate }) => {
         $("#switch2").addClass("switched");
       }
     });
-
+    
     return () => {
       $(window).off("scroll");
       $("#switch").off("click");

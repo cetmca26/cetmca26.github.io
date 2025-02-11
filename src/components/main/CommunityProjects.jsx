@@ -60,9 +60,9 @@ const CommunityProjects = () => {
   }, []);
 
   return (
-    <div className="section full-height m-1">
-    <div className="absolute-center" style={{marginTop:'-10px'}}>
-    <div className="container my-4 "  >
+   
+   
+    <div className="container" style={{marginTop:'80px'}} >
       <h1 className="text-center mb-4 mt-4 mb-2 p-4" >Community Projects</h1>
       {loading ? (
         <div className="d-flex justify-content-center">
@@ -76,8 +76,8 @@ const CommunityProjects = () => {
         </div>
       )}
     </div>
-    </div>
-    </div>
+   
+    
   );
 };
 
