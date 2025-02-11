@@ -20,7 +20,7 @@ function App() {
   const renderComponent = () => {
     switch (activeComponent) {
       case 'about':
-        return <AboutUsCard />;
+        return <AboutUsCard onNavigate={setActiveComponent}/>;
       case 'projects':
         return <CommunityProjects/>;
       case 'rules':
@@ -33,7 +33,7 @@ function App() {
         return <Notes/>
       case 'home':
       default:
-        return <Page />;
+        return <Page onNavigate={setActiveComponent}/>;
     }
   };
 

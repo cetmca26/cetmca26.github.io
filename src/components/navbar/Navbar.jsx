@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import $ from "jquery";
+import logo from "../../assets/logotext.png";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Navbar = ({ onNavigate }) => {
@@ -39,10 +40,20 @@ const Navbar = ({ onNavigate }) => {
         $("#switch").addClass("switched");
       }
     });
+    $("#switch2").on("click", function () {
+      if ($("body").hasClass("dark")) {
+        $("body").removeClass("dark");
+        $("#switch2").removeClass("switched");
+      } else {
+        $("body").addClass("dark");
+        $("#switch2").addClass("switched");
+      }
+    });
 
     return () => {
       $(window).off("scroll");
       $("#switch").off("click");
+      $("#switch2").off("click");
     };
   }, []);
 
@@ -58,7 +69,7 @@ const Navbar = ({ onNavigate }) => {
             <nav className="navbar navbar-expand-md navbar-expand-lg">
               <a className="navbar-brand">
                 <img
-                  src="../../public/logotext.png"
+                  src={ logo }
                   alt="Logo"
                   id="logo"
                   style={{
@@ -68,6 +79,16 @@ const Navbar = ({ onNavigate }) => {
                   }}
                 />
               </a>
+              <span
+                    className="p-2 ms-auto d-md-none "
+                    id="switch2"
+                    onClick={toggleDarkMode}
+                    style={{ cursor: "pointer", paddingTop:"30px" }}
+                  >
+                    <span className="material-symbols-outlined p-1" id="modes">
+                      {isDarkMode ? "brightness_5" : "dark_mode"}
+                    </span>
+                  </span>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -79,6 +100,7 @@ const Navbar = ({ onNavigate }) => {
                     : "invert(0) brightness(2)",
                 }}
               >
+              
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div
@@ -172,7 +194,7 @@ const Navbar = ({ onNavigate }) => {
                     </a>
                   </li>
                   <li
-                    className="ps-4 ps-md-0 ms-0 ms-md-4 me-1"
+                    className="ps-4 ps-md-0 ms-0 ms-md-4 me-1 d-none d-md-block"
                     id="switch"
                     onClick={toggleDarkMode}
                     style={{ cursor: "pointer" }}

@@ -24,7 +24,7 @@ function Footer() {
 
             <div className="col-md-2 col-sm-2 col-xs-2 pt-2">
               <h5 className="heading">Community</h5>
-              <ul className="list-unstyled">
+              <ul className="">
                 <li>About CET MCA 26</li>
                 <li>Our Mission</li>
                 <li>Team Member</li>
@@ -34,7 +34,7 @@ function Footer() {
 
             <div className="col-md-2 col-sm-2 col-xs-2 pt-2">
               <h5 className="heading">Resources</h5>
-              <ul className="list-unstyled card-text">
+              <ul className="">
                 <li>Study Materials</li>
                 <li>Syllabus</li>
                 <li>Research Projects</li>
@@ -44,7 +44,7 @@ function Footer() {
 
             <div className="col-md-2 col-sm-2 col-xs-2 pt-2">
               <h5 className="heading">Connect</h5>
-              <ul className="list-unstyled card-text">
+              <ul className="">
                 <li>GitHub Community</li>
                 <li>Discord Server</li>
                 <li>Contact Us</li>

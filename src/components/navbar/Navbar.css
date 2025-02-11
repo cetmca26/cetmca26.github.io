@@ -49,6 +49,8 @@
 .navbar-toggler:active,
 .navbar-toggler:focus {
 	outline: none;
+	box-shadow:none;
+	border:none;
 }
 .navbar-light .navbar-toggler-icon {
 	width: 24px;
@@ -190,3 +192,5 @@
 body.dark .logo img {
   filter: brightness(100%);
 }
+
+
