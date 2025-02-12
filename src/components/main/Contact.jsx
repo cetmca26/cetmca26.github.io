@@ -14,7 +14,13 @@ function ContactForm() {
   };
 
   if (state.succeeded) {
-    return <div className="alert alert-success text-center">Thanks for joining!</div>;
+    return (
+      <div className="container contact-form " style={{marginTop:'180px'}}>
+        <div className="alert alert-success text-center">Thanks for joining!</div>
+      </div>
+    );
+    
+    
   }
 
   return (
