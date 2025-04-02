@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Spinner } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import "./CommunityProjects.css";
+
 
 const ProjectCard = ({ project }) => {
   return (
@@ -26,6 +28,23 @@ const ProjectCard = ({ project }) => {
   );
 };
 
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    contributors: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        login: PropTypes.string.isRequired,
+        avatar_url: PropTypes.string.isRequired,
+        html_url: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+};
+
+
 const CommunityProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -34,7 +53,7 @@ const CommunityProjects = () => {
     const fetchProjects = async () => {
       try {
         const reposResponse = await axios.get('https://api.github.com/orgs/cetmca26/repos');
-        const repos = reposResponse.data;
+        const repos = Array.isArray(reposResponse.data) ? reposResponse.data : [];
 
         const projectsWithContributors = await Promise.all(
           repos.map(async (repo) => {
@@ -43,7 +62,7 @@ const CommunityProjects = () => {
               name: repo.name,
               description: repo.description,
               image: 'https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg', // Replace with dynamic image if available
-              contributors: contributorsResponse.data,
+              contributors:  Array.isArray(contributorsResponse.data)?contributorsResponse.data : [],
             };
           })
         );

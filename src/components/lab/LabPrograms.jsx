@@ -17,22 +17,22 @@ const labData = {
   }
 };
 
-const SemesterPrograms = () => {
+const LabPrograms = () => {
   const [selectedSemester, setSelectedSemester] = useState(null);
-    const [selectedSubject, setSelectedSubject] = useState(null);
-    const [modalContent, setModalContent] = useState('');
-    const [showModal, setShowModal] = useState(false);
-  
-    const handleCopy = (link) => {
-      navigator.clipboard.writeText(link);
-      alert('Link copied to clipboard!');
-    };
-  
-    const openModal = (link) => {
-      setModalContent(link);
-      setShowModal(true);
-    };
-  
+  const [selectedSubject, setSelectedSubject] = useState(null);
+  const [modalContent, setModalContent] = useState('');
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCopy = (link) => {
+    navigator.clipboard.writeText(link);
+    alert('Link copied to clipboard!');
+  };
+
+  const openModal = (link) => {
+    setModalContent(link);
+    setShowModal(true);
+  };
+
   return (
     <div className="container" style={{marginTop:'80px'}} >
       <h2 className="text-center">Lab Programs</h2>
@@ -82,6 +82,6 @@ const SemesterPrograms = () => {
       </Modal>
     </div>
   );
-}
+};
 
-export default SemesterPrograms
+export default LabPrograms
