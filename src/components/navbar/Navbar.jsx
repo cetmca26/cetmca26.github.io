@@ -161,6 +161,7 @@ const Navbar = ({ onNavigate }) => {
                       Lab
                     </a>
                   </li>
+                  
                   <li className="nav-item ps-4 ps-md-0 ms-0 ms-md-4 me-1 dropdown">
                     <a
                       className="nav-link dropdown-toggle"
@@ -207,6 +208,7 @@ const Navbar = ({ onNavigate }) => {
                     <span className="material-symbols-outlined p-1" id="modes">
                       {isDarkMode ? "brightness_5" : "dark_mode"}
                     </span>
+                    
                   </li>
                 </ul>
               </div>

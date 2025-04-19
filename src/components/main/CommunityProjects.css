@@ -113,3 +113,10 @@
       height: 35px;
     }
   }
+
+  .project-card.expanded {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
+  

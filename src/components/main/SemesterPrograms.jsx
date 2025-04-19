@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Accordion, Card } from 'react-bootstrap';
-
+import { Modal, Button, Accordion } from 'react-bootstrap';
 
 const labData = {
   S1: {
@@ -19,40 +18,37 @@ const labData = {
 
 const SemesterPrograms = () => {
   const [selectedSemester, setSelectedSemester] = useState(null);
-    const [selectedSubject, setSelectedSubject] = useState(null);
-    const [modalContent, setModalContent] = useState('');
-    const [showModal, setShowModal] = useState(false);
-  
-    const handleCopy = (link) => {
-      navigator.clipboard.writeText(link);
-      alert('Link copied to clipboard!');
-    };
-  
-    const openModal = (link) => {
-      setModalContent(link);
-      setShowModal(true);
-    };
-  
+  const [selectedSubject, setSelectedSubject] = useState(null);
+  const [modalContent, setModalContent] = useState('');
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCopy = (link) => {
+    navigator.clipboard.writeText(link);
+    alert('Link copied to clipboard!');
+  };
+
+  const openModal = (link) => {
+    setModalContent(link);
+    setShowModal(true);
+  };
+
   return (
-    <div className="container" style={{marginTop:'80px'}} >
+    <div className="container" style={{ marginTop: '80px' }}>
       <h2 className="text-center">Lab Programs</h2>
       <Accordion defaultActiveKey="0">
         {Object.keys(labData).map((semester, index) => (
-          <Card key={index}>
-            <Accordion.Toggle as={Card.Header} eventKey={index.toString()} onClick={() => setSelectedSemester(semester)}>
+          <Accordion.Item eventKey={index.toString()} key={index}>
+            <Accordion.Header onClick={() => setSelectedSemester(semester)}>
               {semester}
-            </Accordion.Toggle>
-
-            <Accordion.Collapse eventKey={index.toString()}>
-              <Card.Body>
-                {Object.keys(labData[semester]).map((subject, subIndex) => (
-                  <Button key={subIndex} variant="info" className="m-2" onClick={() => setSelectedSubject(subject)}>
-                    {subject}
-                  </Button>
-                ))}
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+            </Accordion.Header>
+            <Accordion.Body>
+              {Object.keys(labData[semester]).map((subject, subIndex) => (
+                <Button key={subIndex} variant="info" className="m-2" onClick={() => setSelectedSubject(subject)}>
+                  {subject}
+                </Button>
+              ))}
+            </Accordion.Body>
+          </Accordion.Item>
         ))}
       </Accordion>
 
@@ -82,6 +78,6 @@ const SemesterPrograms = () => {
       </Modal>
     </div>
   );
-}
+};
 
-export default SemesterPrograms
+export default SemesterPrograms;

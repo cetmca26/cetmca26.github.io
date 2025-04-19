@@ -34,7 +34,7 @@ const LabPrograms = () => {
   };
 
   return (
-    <div className="container" style={{marginTop:'80px'}} >
+    <div className="container " style={{marginTop:'80px'}} >
       <h2 className="text-center">Lab Programs</h2>
       <Accordion defaultActiveKey="0">
         {Object.keys(labData).map((semester, index) => (
@@ -57,7 +57,7 @@ const LabPrograms = () => {
       </Accordion>
 
       {selectedSemester && selectedSubject && (
-        <div className="mt-3">
+        <div className="mt-3 card">
           <h4>{selectedSubject}</h4>
           <ul className="list-group">
             {labData[selectedSemester][selectedSubject].map((program, idx) => (
@@ -70,7 +70,7 @@ const LabPrograms = () => {
         </div>
       )}
 
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal show={showModal} onHide={() => setShowModal(false)} className='card'>
         <Modal.Header closeButton>
           <Modal.Title>Program Link</Modal.Title>
         </Modal.Header>
