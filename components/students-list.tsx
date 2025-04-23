@@ -22,6 +22,17 @@ const studentsData = [
     "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community."
   },  
   {
+    "id": 3,
+    "name": "Shivarama",
+    "avatar": "https://avatars.githubusercontent.com/u/145856726?v=4",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "HTML", "CSS", "Php", "JavaScript", "Mysql", "Research"],
+    "github": "https://github.com/shivarama02",
+    "linkedin": "https://linkedin.com/shivarama02",
+    "email": "shivarama02@gmail.com",
+    "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community."
+  },  
+  {
     "id": 2,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",

@@ -134,6 +134,52 @@ const studentsData = [
         "link": "https://github.com/yadhukrishnx/bookhub"
       }
     ]
+  },
+  {
+    "id": 3,
+    "name": "Shivarama",
+    "avatar": "https://avatars.githubusercontent.com/u/145856726?v=4",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "HTML", "CSS", "JavaScript", "Django", "React", "MySQL", "PostgreSQL"],
+    "github": "https://github.com/shivarama02",
+    "linkedin": "https://linkedin.com/in/shivarama02",
+    "email": "shivarama02@gmail.com",
+    "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "CETMCA26 Community",
+        "role": " Full Stack Developer Intern",
+        "duration": "2025-Present",
+        "description": "Worked on full-stack web projects using React, HTML, CSS, and JavaScript. Gained hands-on experience in MVC architecture and database integration."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "College of Engineering Trivandrum",
+        "degree": "Master of Computer Applications",
+        "duration": "2024 - 2026",
+        "description": "Specializing in Full Stack Web Development and Cloud-based Applications."
+      },
+      {
+        "id": 2,
+        "institution": "University of Kannur",
+        "degree": "Bachelor of  Physics",
+        "duration": "2021 - 2024",
+        "description": "Focused on data structures, web development, and project-based learning."
+      }
+    ],
+    "projects": [
+    
+      {
+        "id": 1,
+        "title": "Yatra - Tourist Destination App",
+        "description": "Web application for managing tourist destinations and users with role-based access for users and visiter.",
+        "technologies": ["Django", "PostgreSQL", "Bootstrap"],
+        "link": "https://github.com/shivarama02/Yatra"
+      }
+    ]
   }
   
   // Add more students with similar detailed data structure
