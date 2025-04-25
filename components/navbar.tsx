@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X, User, LogOut } from "lucide-react"
-import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/contexts/auth-context"
@@ -26,7 +25,6 @@ const navLinks = [
   { name: "Resources", path: "/resources" },
   { name: "Students", path: "/students" },
   { name: "Contact", path: "/contact" },
-  { name: "Quiz", path: "/quiz" },
   { name: "Admission", path: "/admission"},
 ]
 
