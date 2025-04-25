@@ -15,7 +15,7 @@ import { db } from "@/lib/firebase"
 import { doc, getDoc } from "firebase/firestore"
 import type { Group } from "@/types/quiz"
 import { useToast } from "@/hooks/use-toast"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function GroupDetailPage() {
   const { id } = useParams() as { id: string }

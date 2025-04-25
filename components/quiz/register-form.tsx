@@ -55,10 +55,10 @@ export function RegisterForm() {
             </Alert>
           )}
           <div className="space-y-2">
-            <Label htmlFor="username">Username</Label>
+            <Label htmlFor="username">Full Name </Label>
             <Input
               id="username"
-              placeholder="johndoe"
+              placeholder="Full Name . Initial"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
