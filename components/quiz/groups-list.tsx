@@ -5,7 +5,7 @@ import { useAuth } from "@/contexts/auth-context"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Users, ClipboardCopy, AlertCircle } from "lucide-react"
+import { Users, ClipboardCopy, Share2, AlertCircle } from "lucide-react"
 import { db } from "@/lib/firebase"
 import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore"
 import type { Group } from "@/types/quiz"
@@ -81,6 +81,32 @@ export function GroupsList() {
       description: "You can now share this code with others to join your group.",
     })
   }
+  const shareGroupLink = (code: string) => {
+    const joinUrl = `${window.location.origin}/quiz/join?code=${code}`
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Join my quiz group",
+          text: "Click this link to join my quiz group!",
+          url: joinUrl,
+        })
+        .catch((error) => {
+          console.log("Error sharing:", error)
+          copyShareLink(joinUrl)
+        })
+    } else {
+      copyShareLink(joinUrl)
+    }
+  }
+
+  const copyShareLink = (url: string) => {
+    navigator.clipboard.writeText(url)
+    toast({
+      title: "Join link copied",
+      description: "Share this link with others to join your group.",
+    })
+  }
 
   if (loading) {
     return (
@@ -136,9 +162,19 @@ export function GroupsList() {
                 </CardDescription>
               </div>
               {group.adminId === user?.uid && (
-                <Button variant="ghost" size="icon" onClick={() => copyGroupCode(group.code)} title="Copy group code">
-                  <ClipboardCopy className="h-4 w-4" />
-                </Button>
+                <div className="flex gap-1">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => shareGroupLink(group.code)}
+                    title="Share join link"
+                  >
+                    <Share2 className="h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" size="icon" onClick={() => copyGroupCode(group.code)} title="Copy group code">
+                    <ClipboardCopy className="h-4 w-4" />
+                  </Button>
+                </div>
               )}
             </div>
           </CardHeader>

@@ -4,20 +4,29 @@ import { useState } from "react"
 import { useAuth } from "@/contexts/auth-context"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { PlusCircle, Users, AlertCircle } from "lucide-react"
+import { PlusCircle, Users, AlertCircle, LogOut } from "lucide-react"
 import { GroupsList } from "@/components/quiz/groups-list"
 import { CreateGroupDialog } from "@/components/quiz/create-group-dialog"
 import { JoinGroupDialog } from "@/components/quiz/join-group-dialog"
 import { LoginForm } from "@/components/quiz/login-form"
 import { RegisterForm } from "@/components/quiz/register-form"
+
 import { LeaderboardGlobal } from "@/components/quiz/leaderboard-global"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 export function QuizDashboard() {
-  const { user, loading, error } = useAuth()
+  const { user, loading, error, logout } = useAuth()
   const [isCreateGroupOpen, setIsCreateGroupOpen] = useState(false)
   const [isJoinGroupOpen, setIsJoinGroupOpen] = useState(false)
   const [authTab, setAuthTab] = useState<string>("login")
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+    } catch (error) {
+      console.error("Error logging out:", error)
+    }
+  }
 
   if (error) {
     return (
@@ -85,6 +94,16 @@ export function QuizDashboard() {
 
   return (
     <div className="space-y-8">
+       <div className="flex justify-between items-center">
+        <div>
+          <h2 className="text-2xl font-bold">Welcome back!</h2>
+          <p className="text-muted-foreground">{user.email}</p>
+        </div>
+        <Button variant="outline" className="flex items-center gap-2" onClick={handleLogout}>
+          <LogOut className="h-4 w-4" />
+          Log out
+        </Button>
+      </div>
       <Tabs defaultValue="my-groups">
         <TabsList className="mb-6">
           <TabsTrigger value="my-groups">My Groups</TabsTrigger>
