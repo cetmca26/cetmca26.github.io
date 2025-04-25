@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+/lib/firebase.ts
 # next.js
 /.next/
 /out/

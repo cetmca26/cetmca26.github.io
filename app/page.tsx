@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ArrowRight, BookOpen, Code, Github, GraduationCapIcon as Graduation, Users } from "lucide-react"
 import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
+import { TopPerformers } from "@/components/top-performers"
 
 export default function Home() {
   return (
@@ -175,6 +176,7 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
+          <TopPerformers />
         </div>
       </section>
     </div>
