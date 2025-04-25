@@ -11,6 +11,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { Download } from "lucide-react"
+import  QRCode  from "qrcode"
 
 interface QRCodeDialogProps {
   open: boolean
@@ -24,14 +25,21 @@ export function QRCodeDialog({ open, onOpenChange, groupName, joinUrl }: QRCodeD
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (open) {
-      setLoading(true)
-      // Generate QR code using Google Charts API
-      const encodedUrl = encodeURIComponent(joinUrl)
-      const qrUrl = `https://chart.googleapis.com/chart?cht=qr&chl=${encodedUrl}&chs=300x300&choe=UTF-8&chld=L|2`
-      setQrCodeUrl(qrUrl)
-      setLoading(false)
+    const generateQRCode = async () => {
+      if (open && joinUrl) {
+        setLoading(true)
+        try {
+          const qr = await QRCode.toDataURL(joinUrl)
+          setQrCodeUrl(qr)
+        } catch (err) {
+          console.error("QR Code generation failed", err)
+        } finally {
+          setLoading(false)
+        }
+      }
     }
+  
+    generateQRCode()
   }, [open, joinUrl])
 
   const downloadQRCode = () => {

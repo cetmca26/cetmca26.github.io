@@ -8,14 +8,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { AlertCircle } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { AlertCircle, X } from "lucide-react"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export function LoginForm() {
   const { signIn } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
+  const [showForgotPassword, setShowForgotPassword] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,6 +34,7 @@ export function LoginForm() {
   }
 
   return (
+    <>
     <Card>
       <CardHeader>
         <CardTitle>Login</CardTitle>
@@ -58,7 +60,21 @@ export function LoginForm() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+          <div className="flex items-center justify-between">
+              <label htmlFor="password" className="text-sm font-medium">
+                Password
+              </label>
+              <Button
+                variant="link"
+                className="p-0 h-auto text-sm"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setShowForgotPassword(true)
+                }}
+              >
+                Forgot password?
+              </Button>
+            </div>
             <Input
               id="password"
               type="password"
@@ -82,5 +98,32 @@ export function LoginForm() {
         </CardFooter>
       </form>
     </Card>
+
+{showForgotPassword && (
+  <div className="mt-4">
+    <Alert variant="default">
+      <div className="flex justify-between items-start">
+        <div>
+          <AlertTitle>Forgot Password?</AlertTitle>
+          <AlertDescription>
+            If you're unable to access your account, please{" "}
+            <a href="/contact" className="underline text-blue-600">
+              fill out this contact form
+            </a>{" "}
+            with your issue. Our support team will assist you.
+          </AlertDescription>
+        </div>
+        <Button
+          variant="ghost"
+          className="p-1 h-auto"
+          onClick={() => setShowForgotPassword(false)}
+        >
+          <X className="h-4 w-4" />
+        </Button>
+      </div>
+    </Alert>
+  </div>
+)}
+</>
   )
 }

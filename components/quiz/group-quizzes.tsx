@@ -11,6 +11,7 @@ import { collection, query, where, getDocs, orderBy } from "firebase/firestore"
 import type { Quiz } from "@/types/quiz"
 import Link from "next/link"
 import { format, isPast, isFuture } from "date-fns"
+import { ShareQuizButton } from "@/components/quiz/share-quiz-button"
 
 interface GroupQuizzesProps {
   groupId: string
@@ -140,6 +141,7 @@ export function GroupQuizzes({ groupId, isAdmin }: GroupQuizzesProps) {
                     )}
                   </CardDescription>
                 </div>
+                <ShareQuizButton quizId={quiz.id} quizName={quiz.name} groupId={groupId} />
               </div>
             </CardHeader>
             <CardContent>

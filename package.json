@@ -45,11 +45,13 @@
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
+    "firebase": "latest",
     "framer-motion": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "next": "15.2.4",
     "next-themes": "^0.4.4",
+    "qrcode": "^1.5.4",
     "react": "^19",
     "react-day-picker": "8.10.1",
     "react-dom": "^19",
@@ -60,8 +62,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
-    "zod": "^3.24.1",
-     "firebase": "latest"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "^22",
