@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /lib/firebase.ts
+lib/email-service.ts
 # next.js
 /.next/
 /out/
