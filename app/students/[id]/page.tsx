@@ -13,7 +13,7 @@ import { motion } from "framer-motion"
 // Sample student data with extended details for portfolio
 const studentsData = [
   {
-    id: 1,
+    id: 23,
     name: "Deepak h",
     avatar: "https://avatars.githubusercontent.com/u/184137882?v=4",
     role: "Full Stack Developer",
@@ -84,7 +84,7 @@ const studentsData = [
     ],
   },
   {
-    "id": 2,
+    "id": 59,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
     "role": "Full Stack Developer",
@@ -134,7 +134,101 @@ const studentsData = [
         "link": "https://github.com/yadhukrishnx/bookhub"
       }
     ]
-  }
+  },
+  {
+    id: 28,
+    name: "Gokul P",
+    avatar: "https://avatars.githubusercontent.com/u/111432335?v=4",
+    role: "MERN Stack Developer",
+    skills: ["Python", "Java", "MySQL", "MongoDB", "Php", "BlockChain"],
+    github: "https://github.com/Gokulmnz",
+    linkedin: "https://linkedin.com/gokulmnz",
+    email: "career.gkp@gmail.com",
+    bio: "Aspiring financial analyst and developer pursuing MCA, blending tech skills with financial insight. Passionate about business growth, innovation, and entrepreneurship.",
+    experience: [
+      {
+        id: 1,
+        company: "CETMCA26 Community",
+        role: "MERN Stack Developer",
+        duration: "2024 - Present",
+        description:
+          "Building and maintaining full-stack applications using React, Node.js, MongoDB, and Express. Exploring blockchain integration and backend enhancements for financial solutions.",
+      }
+    ],
+    education: [
+      {
+        id: 1,
+        institution: "College of Engineering Trivandrum",
+        degree: "Master of Computer Applications",
+        duration: "2024 - 2026",
+        description: "Focusing on full-stack development and financial technologies.",
+      },
+      {
+        id: 2,
+        institution: "University of Calicut",
+        degree: "Bachelor of Science in Computer Science",
+        duration: "2021 - 2024",
+        description: "Built a strong foundation in programming, databases, and web development.",
+      }
+    ],
+    projects: [
+      {
+        id: 1,
+        title: "FinGrow - Financial Growth App",
+        description:
+          "A web platform to analyze spending habits and suggest investment strategies for students and young professionals.",
+        technologies: ["React", "Node.js", "MongoDB", "Blockchain"],
+        link: "https://github.com/Gokulmnz/fin-grow",
+      }
+    ],
+  },
+  {
+    id: 4,
+    name: "Abhishek Abhayakumar",
+    avatar: "https://avatars.githubusercontent.com/u/187165055?v=4",
+    role: "Aspiring Software Engineer",
+    skills: ["Python", "Java", "MySQL", "Django", "Php", "ML"],
+    github: "https://github.com/abhishekabhayakumar",
+    linkedin: "https://linkedin.com/abhishekabhayakumar",
+    email: "abhishekabhay5286@gmail.com",
+    bio: "Software engineering enthusiast pursuing MCA with a keen interest in Machine Learning. Driven by a passion to build intelligent systems that solve real-world problems.",
+    experience: [
+      {
+        id: 1,
+        company: "CETMCA26 Community",
+        role: "Aspiring Software Engineer",
+        duration: "2024 - Present",
+        description:
+          "Developing intelligent applications using Python, Django, and Machine Learning. Focused on creating real-world solutions with efficient, scalable architectures.",
+      }
+    ],
+    education: [
+      {
+        id: 1,
+        institution: "College of Engineering Trivandrum",
+        degree: "Master of Computer Applications",
+        duration: "2024 - 2026",
+        description: "Specializing in Artificial Intelligence and Software Engineering.",
+      },
+      {
+        id: 2,
+        institution: "Yenepoya University",
+        degree: "Bachelor of Computer Applications",
+        duration: "2020 - 2023",
+        description: "Built skills in software development, data science, and databases.",
+      }
+    ],
+    projects: [
+      {
+        id: 1,
+        title: "SmartHealth AI",
+        description:
+          "A Django-based web application that predicts potential health risks using machine learning models.",
+        technologies: ["Python", "Django", "ML", "SQLite"],
+        link: "https://github.com/abhishekabhayakumar/",
+      }
+    ],
+  },
   
   // Add more students with similar detailed data structure
 ]

@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { AuthProvider } from "@/contexts/auth-context"
 
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({
 }>) {
  
 
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -93,10 +95,12 @@ export default function RootLayout({
         >
           <AuthProvider>
           <div className="flex min-h-screen flex-col">
+
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+       
           </AuthProvider>
         </ThemeProvider>
       </body>

@@ -11,7 +11,7 @@ import Link from "next/link"
 // Sample student data
 const studentsData = [
   {
-    "id": 1,
+    "id": 23,
     "name": "Deepak H",
     "avatar": "https://avatars.githubusercontent.com/u/184137882?v=4",
     "role": "Full Stack Developer",
@@ -22,7 +22,7 @@ const studentsData = [
     "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community."
   },  
   {
-    "id": 2,
+    "id": 59,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
     "role": "Full Stack Developer",
@@ -31,6 +31,28 @@ const studentsData = [
     "linkedin": "https://linkedin.com/in/yadhukrishnx",
     "email": "yadhukrishnayadhu007@gmail.com",
     "bio": "Dedicated developer passionate about building full-stack web applications and exploring UI/UX improvements through hands-on projects."
+  },
+  {
+    "id": 28,
+    "name": "Gokul P",
+    "avatar": "https://avatars.githubusercontent.com/u/111432335?v=4",
+    "role": "Mern Stack Developer",
+    "skills": ["Python", "Java", "MySQL", "MongoDB" , "Php","BlockChain"],
+    "github": "https://github.com/Gokulmnz",
+    "linkedin": "https://linkedin.com/gokulmnz",
+    "email": "career.gkp@gmail.com",
+    "bio": "Aspiring financial analyst and developer pursuing MCA, blending tech skills with financial insight. Passionate about business growth, innovation, and entrepreneurship."
+  },
+  {
+    "id": 4,
+    "name": "Abhishek Abhayakumar",
+    "avatar": "https://avatars.githubusercontent.com/u/187165055?v=4",
+    "role": "Aspiring Software Engineer",
+    "skills": ["Python", "Java", "MySQL", "Django" , "Php","ML"],
+    "github": "https://github.com/abhishekabhayakumar",
+    "linkedin": "https://linkedin.com/abhishekabhayakumar",
+    "email": "abhishekabhay5286@gmail.com",
+    "bio": "Software engineering enthusiast pursuing MCA with a keen interest in Machine Learning. Driven by a passion to build intelligent systems that solve real-world problems."
   },
   
 ]
