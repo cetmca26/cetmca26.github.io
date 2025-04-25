@@ -183,6 +183,100 @@ const studentsData = [
     ],
   },
   {
+    "id": 13,
+    "name": "Anandu P N",
+    "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQGDzEjSr6U3lw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731236977864?e=2147483647&v=beta&t=4praNly4wbAGAn3hBJHZBX0mOi4Tx_PWuzvWERkau9o",
+    "role": "Aspiring DevOps Engineer",
+    "skills": ["Python", "Java", "MySQL", "React" , "Php","Docker"],
+    "github": "https://github.com/anandu-pn",
+    "linkedin": "www.linkedin.com/in/anandupn",
+    "email": "anandupn@hotmail.com",
+    "bio": "As a Master of Computer Applications (MCA) student with a fervent passion for technology, I am on a journey to shape my aspirations into reality. My dream is to become a proficient DevOps and Network Engineer, someone who bridges the gap between software development and IT operations while ensuring seamless network infrastructures."
+
+experience: [
+  {
+    id: 1,
+    company: "CETMCA26 Community",
+    role: "Aspiring DevOps Engineer",
+    duration: "2024 - Present",
+    description:
+      "The appeal of DevOps lies in its ability to streamline workflows, enhance collaboration, and deliver faster, more reliable solutions. Paired with my intrigue in networking, which encompasses the design, implementation, and maintenance of robust communication systems, I aspire to be a professional who thrives on solving real-world challenges. The convergence of these domains enables me to think holistically about system efficiency, security, and scalability.",
+  }
+],
+education: [
+  {
+    id: 1,
+    institution: "College of Engineering Trivandrum",
+    degree: "Master of Computer Applications",
+    duration: "2024 - 2026",
+    description: "Specializing Networking.",
+  },
+  {
+    id: 2,
+    institution: "Govt Arts and Science College Calicut",
+    degree: "Bachelor of Science Physics",
+    duration: "2021 - 2024",
+    description: "Combine Nanophysics to explore nanoscale matter with Computational Physics to solve challenges through advanced simulations.",
+  }
+],
+projects: [
+  {
+    id: 1,
+    title: "Open Smrithi",
+    description:
+      "A blockchain-based system secures certificate issuance and verification, with student portfolio pages showcasing achievements.",
+    technologies: ["React", "Metamask", "IPFS", "Polygon"],
+    link: "https://github.com/cetmca26/smriticert-frontend",
+  }
+],
+},
+  {
+    "id": 54,
+    "name": "Shivarama",
+    "avatar": "https://avatars.githubusercontent.com/u/145856726?v=4",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "HTML", "CSS", "JavaScript", "Django", "React", "MySQL", "PostgreSQL"],
+    "github": "https://github.com/shivarama02",
+    "linkedin": "https://linkedin.com/in/shivarama02",
+    "email": "shivarama02@gmail.com",
+    "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "CETMCA26 Community",
+        "role": " Full Stack Developer Intern",
+        "duration": "2025-Present",
+        "description": "Worked on full-stack web projects using React, HTML, CSS, and JavaScript. Gained hands-on experience in MVC architecture and database integration."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "College of Engineering Trivandrum",
+        "degree": "Master of Computer Applications",
+        "duration": "2024 - 2026",
+        "description": "Specializing in Full Stack Web Development and Cloud-based Applications."
+      },
+      {
+        "id": 2,
+        "institution": "University of Kannur",
+        "degree": "Bachelor of  Physics",
+        "duration": "2021 - 2024",
+        "description": "Focused on data structures, web development, and project-based learning."
+      }
+    ],
+    "projects": [
+    
+      {
+        "id": 1,
+        "title": "Yatra - Tourist Destination App",
+        "description": "Web application for managing tourist destinations and users with role-based access for users and visiter.",
+        "technologies": ["Django", "PostgreSQL", "Bootstrap"],
+        "link": "https://github.com/shivarama02/Yatra"
+      }
+    ]
+  },
+  {
     id: 4,
     name: "Abhishek Abhayakumar",
     avatar: "https://avatars.githubusercontent.com/u/187165055?v=4",

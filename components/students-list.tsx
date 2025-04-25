@@ -46,6 +46,28 @@ const studentsDatabefore = [
     "bio": "Software engineering enthusiast pursuing MCA with a keen interest in Machine Learning. Driven by a passion to build intelligent systems that solve real-world problems."
   },
   {
+    "id": 13,
+    "name": "Anandu P N",
+    "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQGDzEjSr6U3lw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731236977864?e=2147483647&v=beta&t=4praNly4wbAGAn3hBJHZBX0mOi4Tx_PWuzvWERkau9o",
+    "role": "Aspiring DevOps Engineer",
+    "skills": ["Python", "Java", "MySQL", "React" , "Php","Docker"],
+    "github": "https://github.com/anandu-pn",
+    "linkedin": "www.linkedin.com/in/anandupn",
+    "email": "anandupn@hotmail.com",
+    "bio": "As an MCA student passionate about technology, I aspire to become a skilled DevOps and Network Engineer, bridging software development and IT operations."
+  },
+  {
+    "id": 54,
+    "name": "Shivarama",
+    "avatar": "https://avatars.githubusercontent.com/u/145856726?v=4",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "HTML", "CSS", "Php", "JavaScript", "Mysql", "Research"],
+    "github": "https://github.com/shivarama02",
+    "linkedin": "https://linkedin.com/shivarama02",
+    "email": "shivarama02@gmail.com",
+    "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community."
+  }, 
+  {
     "id": 59,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
@@ -118,7 +140,7 @@ export function StudentsList() {
                   <CardDescription>{student.role}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-sm text-muted-foreground text-center mb-4">{student.bio}</p>
+                  <p className="text-sm text-muted-foreground text-center mb-4" >{student.bio}</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-2">
                     {student.skills.map((skill) => (
                       <Badge key={skill} variant="secondary" className="text-xs">
