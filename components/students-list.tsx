@@ -9,7 +9,9 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 
 // Sample student data
-const studentsData = [
+const studentsDatabefore = [
+  
+ 
   {
     "id": 23,
     "name": "Deepak H",
@@ -21,17 +23,6 @@ const studentsData = [
     "email": "deepakdeepam@gmail.com",
     "bio": "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community."
   },  
-  {
-    "id": 59,
-    "name": "Yadhukrishna N.P.",
-    "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
-    "role": "Full Stack Developer",
-    "skills": ["Python", "React", "MySQL", "PostgreSQL"],
-    "github": "https://github.com/yadhukrishnx",
-    "linkedin": "https://linkedin.com/in/yadhukrishnx",
-    "email": "yadhukrishnayadhu007@gmail.com",
-    "bio": "Dedicated developer passionate about building full-stack web applications and exploring UI/UX improvements through hands-on projects."
-  },
   {
     "id": 28,
     "name": "Gokul P",
@@ -54,11 +45,29 @@ const studentsData = [
     "email": "abhishekabhay5286@gmail.com",
     "bio": "Software engineering enthusiast pursuing MCA with a keen interest in Machine Learning. Driven by a passion to build intelligent systems that solve real-world problems."
   },
+  {
+    "id": 59,
+    "name": "Yadhukrishna N.P.",
+    "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "React", "MySQL", "PostgreSQL"],
+    "github": "https://github.com/yadhukrishnx",
+    "linkedin": "https://linkedin.com/in/yadhukrishnx",
+    "email": "yadhukrishnayadhu007@gmail.com",
+    "bio": "Dedicated developer passionate about building full-stack web applications and exploring UI/UX improvements through hands-on projects."
+  },
   
 ]
 
+const shuffleArray = (array) => {
+  return array.sort(() => Math.random() - 0.5);  
+}
+
+const studentsData = shuffleArray([...studentsDatabefore]);
+
 export function StudentsList() {
   const [searchTerm, setSearchTerm] = useState("")
+  
 
   const filteredStudents = studentsData.filter(
     (student) =>
