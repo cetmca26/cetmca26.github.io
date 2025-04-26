@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Github, Linkedin, Mail, ExternalLink, Calendar, GraduationCap } from "lucide-react"
 import { motion } from "framer-motion"
+import { StudentQRCodeDialog } from "@/components/student-qr-code-dialog"
 
 // Sample student data with extended details for portfolio
 const studentsData = [
@@ -187,49 +188,48 @@ const studentsData = [
     "name": "Anandu P N",
     "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQGDzEjSr6U3lw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731236977864?e=2147483647&v=beta&t=4praNly4wbAGAn3hBJHZBX0mOi4Tx_PWuzvWERkau9o",
     "role": "Aspiring DevOps Engineer",
-    "skills": ["Python", "Java", "MySQL", "React" , "Php","Docker"],
+    "skills": ["Python", "Java", "MySQL", "React", "Php", "Docker"],
     "github": "https://github.com/anandu-pn",
     "linkedin": "www.linkedin.com/in/anandupn",
     "email": "anandupn@hotmail.com",
-    "bio": "As a Master of Computer Applications (MCA) student with a fervent passion for technology, I am on a journey to shape my aspirations into reality. My dream is to become a proficient DevOps and Network Engineer, someone who bridges the gap between software development and IT operations while ensuring seamless network infrastructures."
+    "bio": "As a Master of Computer Applications (MCA) student with a fervent passion for technology, I am on a journey to shape my aspirations into reality. My dream is to become a proficient DevOps and Network Engineer, someone who bridges the gap between software development and IT operations while ensuring seamless network infrastructures.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "CETMCA26 Community",
+        "role": "Aspiring DevOps Engineer",
+        "duration": "2024 - Present",
+        "description": "The appeal of DevOps lies in its ability to streamline workflows, enhance collaboration, and deliver faster, more reliable solutions. Paired with my intrigue in networking, which encompasses the design, implementation, and maintenance of robust communication systems, I aspire to be a professional who thrives on solving real-world challenges. The convergence of these domains enables me to think holistically about system efficiency, security, and scalability."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "College of Engineering Trivandrum",
+        "degree": "Master of Computer Applications",
+        "duration": "2024 - 2026",
+        "description": "Specializing in Networking."
+      },
+      {
+        "id": 2,
+        "institution": "Govt Arts and Science College Calicut",
+        "degree": "Bachelor of Science Physics",
+        "duration": "2021 - 2024",
+        "description": "Combine Nanophysics to explore nanoscale matter with Computational Physics to solve challenges through advanced simulations."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Open Smrithi",
+        "description": "A blockchain-based system secures certificate issuance and verification, with student portfolio pages showcasing achievements.",
+        "technologies": ["React", "Metamask", "IPFS", "Polygon"],
+        "link": "https://github.com/cetmca26/smriticert-frontend"
+      }
+    ]
+  }
+,  
 
-experience: [
-  {
-    id: 1,
-    company: "CETMCA26 Community",
-    role: "Aspiring DevOps Engineer",
-    duration: "2024 - Present",
-    description:
-      "The appeal of DevOps lies in its ability to streamline workflows, enhance collaboration, and deliver faster, more reliable solutions. Paired with my intrigue in networking, which encompasses the design, implementation, and maintenance of robust communication systems, I aspire to be a professional who thrives on solving real-world challenges. The convergence of these domains enables me to think holistically about system efficiency, security, and scalability.",
-  }
-],
-education: [
-  {
-    id: 1,
-    institution: "College of Engineering Trivandrum",
-    degree: "Master of Computer Applications",
-    duration: "2024 - 2026",
-    description: "Specializing Networking.",
-  },
-  {
-    id: 2,
-    institution: "Govt Arts and Science College Calicut",
-    degree: "Bachelor of Science Physics",
-    duration: "2021 - 2024",
-    description: "Combine Nanophysics to explore nanoscale matter with Computational Physics to solve challenges through advanced simulations.",
-  }
-],
-projects: [
-  {
-    id: 1,
-    title: "Open Smrithi",
-    description:
-      "A blockchain-based system secures certificate issuance and verification, with student portfolio pages showcasing achievements.",
-    technologies: ["React", "Metamask", "IPFS", "Polygon"],
-    link: "https://github.com/cetmca26/smriticert-frontend",
-  }
-],
-},
   {
     "id": 54,
     "name": "Shivarama",
@@ -323,6 +323,182 @@ projects: [
       }
     ],
   },
+  {
+    "id": 5,
+    "name": "Abhishek R S",
+    "avatar": "https://media.licdn.com/dms/image/v2/D5603AQEONPrQUi4dOw/profile-displayphoto-shrink_800_800/B56ZZw7KH8HUAc-/0/1745651278785?e=1750896000&v=beta&t=X52hBw3vSSAV8Se3_0O4ysIp8EnwfgEnvC9cjpSnBuo",
+    "role": "Full Stack Developer",
+    "skills": [
+      "C",
+      "Java",
+      "Python",
+      "JavaScript",
+      "AWS",
+      "AngularJS",
+      "SQL",
+      "PowerBi",
+      "Express",
+      "MongoDB",
+      "Android"
+    ],
+    "github": "https://github.com/abhxi-r-s",
+    "linkedin": "https://www.linkedin.com/in/abhishek-r-s-profile",
+    "email": "abhishek.rs.here@gmail.com",
+    "bio": "Software developer crafting dynamic, scalable web apps with seamless user experiences. Passionate about innovation, efficient solutions, and growing with every challenge.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "CETMCA26 Community",
+        "role": "MERN Stack Developer",
+        "duration": "2024 - Present",
+        "description": "A dynamic full-stack project built to deliver seamless frontend experiences and powerful backend performance, leveraging modern technologies for a complete, scalable solution."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "Christ Nagar College, Trivandrum",
+        "degree": "Bachelor of Computer Application",
+        "duration": "2020 - 2023",
+        "description": "Building the future at the crossroads of software development and design."
+      },
+      {
+        "id": 2,
+        "institution": "College of Engineering, Trivandrum",
+        "degree": "Master of Computer Application",
+        "duration": "2024 - Present",
+        "description": "That early foundation now powers leading-edge technologies and exceptional user experiences."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "iPanchayat",
+        "description": "This project aims to digitize the Panchayat system by creating an online platform for managing records, public services, and citizen interactions. It streamlines governance, increases transparency, and ensures faster, more efficient service delivery to rural communities.",
+        "technologies": ["MongoDB", "Express", "AngularJS", "Node.js"],
+        "link": "https://github.com/abhxi-r-s/ipanchayat.git"
+      },
+      {
+        "id": 2,
+        "title": "Weather-APP",
+        "description": "This Android Weather App provides real-time weather updates, forecasts, and location-based weather details using a simple and user-friendly interface. Powered by reliable weather APIs, it ensures users stay informed about current conditions, anytime, anywhere.",
+        "technologies": ["Android Studio", "Java", "XML"],
+        "link": "https://github.com/abhxi-r-s/Weather-app/tree/master"
+      }
+    ]
+  },
+  {
+    "id": "50",
+    "name": "Sana S Navas",
+    "avatar": "https://media.licdn.com/dms/image/v2/D5635AQFQafP0_n1WUQ/profile-framedphoto-shrink_400_400/B56ZXCtwNRGQAc-/0/1742728529046?e=1746298800&v=beta&t=G_Zm0APobSH1a5XlFYIQCetYGRtfP8VHhyWEmjuom0Y",
+    "role": "Data Scientist",
+    "skills": ["Python", "Java", "HTML", "CSS", "PHP", "SQL", "C", "MongoDB"],
+    "github": "https://github.com/SanaSNavas7",
+    "linkedin": "https://www.linkedin.com/in/sana-s-navas-787514249",
+    "email": "sananavas100@gmail.com",
+    "bio": "As an aspiring tech professional, I am deeply passionate about exploring the world of machine learning, uncovering insights through data analysis, and creating impactful web applications. Eager to learn, build, and innovate, I aim to turn ideas into real-world solutions that make a difference.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "ICFOSS",
+        "role": "Intern",
+        "duration": "Jan 2024 - Feb 2024",
+        "description": "Worked as a Machine Learning intern focusing on the analysis of aerosols, temperature variations, and radiative forcing using machine learning techniques."
+      },
+      {
+        "id": 2,
+        "company": "IBM",
+        "role": "Intern",
+        "duration": "Nov 2024",
+        "description": "Completed a summer internship at IBM, contributing to a diabetes prediction project using machine learning techniques."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "College of Engineering Trivandrum (CET)",
+        "degree": "Master of Computer Applications",
+        "duration": "2024 - 2026",
+        "description": "Strong foundation in programming languages and technologies including PHP, Java, Python, C, HTML, and more."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Analysis of relationship between atmospheric aerosols and temperature using machine learning algorithms",
+        "description": "Analyzed the relationship between atmospheric aerosols and temperature patterns using machine learning. Applied data preprocessing, feature engineering, and advanced modeling techniques to study the influence of aerosols on climate behavior.",
+        "technologies": ["Machine Learning"],
+        "link": "https://github.com/SanaSNavas7/Machine-Learning/blob/main/aerosolopticaldepth.ipynb"
+      },
+      {
+        "id": 2,
+        "title": "Diabetes Prediction",
+        "description": "Developed predictive models to identify potential diabetes cases using machine learning algorithms. Focused on data preprocessing, feature selection, and evaluation using Random Forest, Logistic Regression, and K-Nearest Neighbors.",
+        "technologies": ["Machine Learning"],
+        "link": "https://github.com/SanaSNavas7/Machine-Learning/blob/main/Diabetes.ipynb"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Bhavana Theruvath",
+    "avatar": "https://avatars.githubusercontent.com/u/99276236?v=4",
+    "role": "Aspiring Software Engineer",
+    "skills": [
+      "Python",
+      "C",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "Java",
+      "SQL"
+    ],
+    "github": "https://github.com/bhavanatheruvath",
+    "linkedin": "https://linkedin.com/in/bhavanatheruvath",
+    "email": "bhavanatheruvath2255@gmail.com",
+    "bio": "Aspiring software engineer passionate about building efficient, user-friendly applications. Eager to learn, grow, and contribute to innovative tech solutions.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "cetmca26",
+        "role": "Content creator",
+        "duration": "2024 - present",
+        "description": "Assisted in creating and managing contents."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "Farook College (Autonomous), Calicut",
+        "degree": "Bachelor of Science in Computer Science",
+        "duration": "2021-24",
+        "description": "NCC C certificate Holder"
+      },
+      {
+        "id": 2,
+        "institution": "College of Engineering Trivandrum",
+        "degree": "Masters in Computer Application",
+        "duration": "2024-26",
+        "description": "Assisted in developing and maintaining CETMCA26 community page."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Portfolio",
+        "description": "Portfolio page of Bhavana Theruvath",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "link": "https://github.com/bhavanatheruvath"
+      }
+    ]
+  }
+,  
+    
   
   // Add more students with similar detailed data structure
 ]
@@ -363,7 +539,7 @@ export default function StudentPortfolio() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 mt-4 mb-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -395,15 +571,16 @@ export default function StudentPortfolio() {
                   <span className="sr-only">Email</span>
                 </Button>
               </a>
+              <StudentQRCodeDialog studentId={student.id.toString()} studentName={student.name} />
             </div>
           </div>
           <div className="text-center md:text-left flex-1">
             <h1 className="text-3xl font-bold tracking-tight mb-2">{student.name}</h1>
-            <p className="text-xl text-primary mb-4">{student.role}</p>
+            <p className="text-xl text-cyan-400 mb-4">{student.role}</p>
             <p className="text-muted-foreground mb-6 max-w-2xl">{student.bio}</p>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
               {student.skills.map((skill: string) => (
-                <Badge key={skill} variant="secondary">
+                <Badge key={skill} variant="secondary" className="hover:bg-cyan-500 hover:text-black">
                   {skill}
                 </Badge>
               ))}
@@ -414,8 +591,8 @@ export default function StudentPortfolio() {
 
       <Tabs defaultValue="experience" className="w-full">
         <div className="flex justify-center mb-8">
-          <TabsList className="grid w-full max-w-md grid-cols-3">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
+          <TabsList className="grid w-full max-w-md grid-cols-3 ">
+            <TabsTrigger value="experience" >Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="projects">Projects</TabsTrigger>
           </TabsList>
