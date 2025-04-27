@@ -88,12 +88,12 @@ const studentsData = [
     "id": 59,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
-    "role": "Full Stack Developer",
-    "skills": ["Python", "HTML", "CSS", "JavaScript", "Django", "React", "MySQL", "PostgreSQL"],
+    "role": "Software Engineer",
+    "skills": ["Java", "C++", "Django", "MERN", "SQL"],
+    "bio": "Software Engineer with strong skills in Java, C++, Django, and MERN stack. Passionate about building scalable applications, API development, and delivering high-quality software through effective SDLC practices",
     "github": "https://github.com/yadhukrishnx",
     "linkedin": "https://linkedin.com/in/yadhukrishnx",
     "email": "yadhukrishnanp@gmail.com",
-    "bio": "Enthusiastic Django developer passionate about building practical web solutions and improving user experience through well-structured design and responsive interfaces.",
     "experience": [
       {
         "id": 1,
@@ -231,7 +231,7 @@ const studentsData = [
 ,  
 
   {
-    "id": 54,
+    "id": 53,
     "name": "Shivarama",
     "avatar": "https://avatars.githubusercontent.com/u/145856726?v=4",
     "role": "Full Stack Developer",
@@ -388,9 +388,67 @@ const studentsData = [
     ]
   },
   {
+    "id": 54,
+    "name": "Subi Suresh",
+    "avatar": "https://avatars.githubusercontent.com/u/162290234?s=400&u=538a7d968d7f8f3b76a5629b591757a995a204d1&v=4",
+    "role": "iOS Developer",
+    "skills": [
+      "Swift",
+      "Swift UI",
+      "UIKit",
+      "Cocoa",
+      "C++",
+      "MySQL",
+      "Django"
+    ],
+    "github": "https://github.com/Subisuresh321",
+    "linkedin": "https://www.linkedin.com/in/subisuresh2503",
+    "email": "subisuresh69@gmail.com",
+    "bio": "I am an aspiring iOS developer passionate about contributing to the vibrant Apple community while exploring Swift-driven platforms like iOS, WatchOS, tvOS, and macOS. Committed to continuous learning, I aim to craft innovative applications that enhance user experiences across the entire Apple ecosystem.",
+    "experience": [
+      {
+        "id": 1,
+        "company": "CETMCA26 Community",
+        "role": "Aspiring iOS Developer",
+        "duration": "2024-Present",
+        "description": "As an aspiring iOS developer, my responsibilities include designing and developing applications across iOS, WatchOS, tvOS, and macOS while ensuring they deliver seamless and engaging user experiences. Additionally, I strive to stay updated with Apple ecosystem advancements and actively contribute to the Apple developer community."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "College of Engineering Trivandrum",
+        "degree": "Master of Computer Applications",
+        "duration": "2024-2026",
+        "description": "Strong foundation in programming languages and technologies including Java, Python, C, HTML, CSS and more."
+      },
+      {
+        "id": 2,
+        "institution": "CAS IHRD Karthikappally",
+        "degree": "Bachelor of Computer Application",
+        "duration": "2020-2024",
+        "description": "Strong foundation in programming languages and technologies including C, C++, PHP, Java, HTML, and more."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "KinderGarden Website",
+        "description": "A colorful, child-friendly kindergarten website built with Django, offering fun activities and engaging educational content for young children. It also features interactive games developed with Pygame to make learning playful and exciting.",
+        "technologies": [
+          "Django",
+          "Pygame",
+          "MySQL"
+        ],
+        "link": "https://github.com/Subisuresh321/KinderGarden-Website.git"
+      }
+    ]
+  }
+,  
+  {
     "id": "50",
     "name": "Sana S Navas",
-    "avatar": "https://media.licdn.com/dms/image/v2/D5635AQFQafP0_n1WUQ/profile-framedphoto-shrink_400_400/B56ZXCtwNRGQAc-/0/1742728529046?e=1746298800&v=beta&t=G_Zm0APobSH1a5XlFYIQCetYGRtfP8VHhyWEmjuom0Y",
+    "avatar": "https://media.licdn.com/dms/image/v2/D5603AQEQZIfL6_GpQg/profile-displayphoto-shrink_400_400/B56ZZ03JkeGoAk-/0/1745717337396?e=2147483647&v=beta&t=97yrb7QKtuh_08JhwErKyAWmkRThkb8Uyl2VhaJU37k",
     "role": "Data Scientist",
     "skills": ["Python", "Java", "HTML", "CSS", "PHP", "SQL", "C", "MongoDB"],
     "github": "https://github.com/SanaSNavas7",

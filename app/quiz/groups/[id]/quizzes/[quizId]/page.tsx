@@ -14,6 +14,7 @@ import { db } from "@/lib/firebase"
 import { doc, getDoc, collection, query, where, getDocs, addDoc, serverTimestamp } from "firebase/firestore"
 import type { Quiz, Question, QuizAttempt } from "@/types/quiz"
 import { format, differenceInSeconds, addMinutes, isPast, isFuture } from "date-fns"
+import { QuizLeaderboard } from "@/components/quiz/quiz-leaderboard"
 
 export default function QuizPage() {
   const { id, quizId } = useParams() as { id: string; quizId: string }
@@ -35,6 +36,7 @@ export default function QuizPage() {
   const [score, setScore] = useState<number | null>(null)
   const [previousAttempt, setPreviousAttempt] = useState<QuizAttempt | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  
 
   useEffect(() => {
     async function fetchQuizAndQuestions() {
@@ -270,6 +272,9 @@ export default function QuizPage() {
             </Button>
           </CardFooter>
         </Card>
+        <div className="mt-8">
+          <QuizLeaderboard quizId={quizId} />
+        </div>
       </div>
     )
   }
@@ -390,6 +395,9 @@ export default function QuizPage() {
             </Button>
           </CardFooter>
         </Card>
+        <div className="mt-8">
+          <QuizLeaderboard quizId={quizId} />
+        </div>
       </div>
     )
   }
