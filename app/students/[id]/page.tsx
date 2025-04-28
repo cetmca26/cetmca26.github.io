@@ -85,6 +85,141 @@ const studentsData = [
     ],
   },
   {
+    "id": 1,
+    "name": "Aaron Gladston",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJsGKWyysBluzWMIcBxiV2PEn7N1HD2J7pXdKG5u9BzhoNTeZjU=s288-c-no",
+    "role": "Software Developer",
+    "skills": ["Python", "HTML", "CSS", "Java"],
+    "bio": "Aspiring software developer.",
+    "github": "https://github.com/AaronGladston",
+    "linkedin": "https://www.linkedin.com/in/aaron-gladston-8b5b62334/",
+    "email": "aarongladston2003@gmail.com",
+    "experience": [
+      {
+        "id": 1,
+        "company": "Tata Consultancy Services",
+        "role": "Project Manager",
+        "duration": "2023 - 2024",
+        "description": "Conduct projects."
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "Mar Ivanios College",
+        "degree": "BSc Physics with Machine Learning",
+        "duration": "2021 - 2024",
+        "description": "Dived into a new world of applications in Physics with the effectiveness of Machine Learning."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Dream11 Prediction Application",
+        "description": "Helps to navigate through the predictions in the Dream11 applications.",
+        "technologies": ["React", "Flutter", "MERN"],
+        "link": "https://github.com/Dream11"
+      }
+    ]
+  }
+,
+{
+  "id": 7,
+  "name": "Abraham Peter",
+  "avatar": "https://avatars.githubusercontent.com/u/138754064?v=4",
+  "role": "Aspiring Aspirer",
+  "skills": ["Java", "Python", "HTML", "CSS", "JavaScript", "React"],
+  "bio": "Software engineer in training. Ctrl+C, Ctrl+V specialist",
+  "github": "https://github.com/abrahampeter10",
+  "linkedin": "https://www.linkedin.com/in/iamabrahampeter/",
+  "email": "abrahampeteronline@gmail.com",
+  "experience": [
+    {
+      "id": 1,
+      "company": "CETMCA26 Community",
+      "role": "Software Error Developer",
+      "duration": "2024-Present",
+      "description": "Mastering skills through the errors I proudly create and correct."
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "College of Engineering Trivandrum",
+      "degree": "Master of Computer Applications",
+      "duration": "2024-2026",
+      "description": "Gaining knowledge from the curriculum and finding some achievements along the way."
+    },
+    {
+      "id": 2,
+      "institution": "Calicut University",
+      "degree": "Bsc Computer Science",
+      "duration": "2021-2024",
+      "description": "Successfully completed my degree — that's an achievement in itself!"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "EV Charging Station Booking WebApp",
+      "description": "EV Charging Station Booking WebApp allows users to find, book, and manage electric vehicle charging slots easily. The platform connects EV owners with available charging stations in real-time, helping to reduce wait times, plan journeys efficiently, and promote eco-friendly transportation",
+      "technologies": ["React", "Django", "MySql"],
+      "link": "https://github.com/abrahampeter10/Electric-Vehicle"
+    }
+  ]
+}
+,{
+  "id": 27,
+  "name": "Gautham B",
+  "avatar": "https://avatars.githubusercontent.com/u/55729626?v=4",
+  "role": "Web Developer",
+  "skills": [
+    "Javscript",
+    "Python",
+    "PHP",
+    "Java",
+    "MySQL",
+    "Django",
+    "Android app development"
+  ],
+  "bio": "Web Developer | Cybersecurity Student | Currently pursuing Master's degree at College of Engineering Trivandrum",
+  "github": "https://github.com/gigabyte1020",
+  "linkedin": "https://www.linkedin.com/in/gautham-b-670837219/",
+  "email": "gauthamb1020@gmail.com",
+  "experience": [
+    {
+      "id": 1,
+      "company": "Eztansa Technologies",
+      "role": "Intern Software Developer",
+      "duration": "April 2019-March 2020",
+      "description": "Intern software developer and leader of multiple projects"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "College of Engineering Trivandrum",
+      "degree": "MCA",
+      "duration": "2024-2026",
+      "description": "Pursuing Master's degree at College of Engineering Trivandrum"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Chat App for College",
+      "description": "Developed an Android App for my 6th semester major project, enabling ID card scanning and automatic addition of students to class-specific chat groups. Utilized Firebase as the backend platform and Google's ML Kit for text recognition.",
+      "technologies": [
+        "Java",
+        "Firebase",
+        "Android Studio"
+      ],
+      "link": "https://github.com/gigabyte1020/CollegeMsgApp2"
+    }
+  ]
+}
+,
+  {
     "id": 59,
     "name": "Yadhukrishna N.P.",
     "avatar": "https://avatars.githubusercontent.com/u/145049379?v=4",
@@ -136,6 +271,51 @@ const studentsData = [
       }
     ]
   },
+  {
+    "id": 60,
+    "name": "Zuhri Noor",
+    "avatar": "https://avatars.githubusercontent.com/u/85988261?v=4",
+    "role": "Software Engineer",
+    "skills": ["MERN", "Python", "Java", "SQL", "PHP"],
+    "bio": "MCA Student",
+    "github": "https://github.com/ZuhriNoor",
+    "linkedin": "https://www.linkedin.com/in/zuhrinoor",
+    "email": "zuhrinoor12@gmail.com",
+    "experience": [
+      // {
+      //   "id": 1,
+      //   "company": "Life",
+      //   "role": "Manager",
+      //   "duration": "2002 - Present",
+      //   "description": "Not bad."
+      // }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "institution": "MES Keveeyam College, Valanchery, Malappuram",
+        "degree": "Bachelor of Computer Application",
+        "duration": "2021 - 2024",
+        "description": "Completed BCA successfully."
+      },
+      {
+        "id": 2,
+        "institution": "College of Engineering, Trivandrum",
+        "degree": "Master of Computer Application",
+        "duration": "2024 - 2026",
+        "description": "Pursuing."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Zetra",
+        "description": "A Sustainable Online Platform for E-Waste Collection, Refurbishment and Service",
+        "technologies": ["React", "Node JS", "Express", "MongoDB"],
+        "link": "https://github.com/ZuhriNoor/zetraProject"
+      }
+    ]
+  },  
   {
     id: 28,
     name: "Gokul P",

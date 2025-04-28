@@ -43,10 +43,10 @@ export function RegisterForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Register</CardTitle>
-        <CardDescription>Create an account to access the quiz platform</CardDescription>
+        {/* <CardTitle>Register</CardTitle> */}
+        <CardDescription>For the Smooth Working of the Site Registration Page Has Been Closed Contact Related People If You Wants to Create An Account . ( Quiz Platform is Only Available to Students of CET MCA ) - Contact - +91 7034365314 </CardDescription>
       </CardHeader>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <CardContent className="space-y-4">
           {error && (
             <Alert variant="destructive">
@@ -108,7 +108,7 @@ export function RegisterForm() {
             )}
           </Button>
         </CardFooter>
-      </form>
+      </form> */}
     </Card>
   )
 }

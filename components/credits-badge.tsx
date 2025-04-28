@@ -24,15 +24,15 @@ export function CreditsBadge() {
           src={HapplleLogo}
           alt="Happlle Logo"
           className="h-5 w-5"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
         <div className="flex flex-col">
-          <span className="text-xs font-medium">
+          <span className="text-[8px] font-medium">
             <span className="text-orange-600">Hap</span>
             <span className="text-blue-500">plle</span>
           </span>
-          <span className="text-[10px] text-muted-foreground -mt-1 dark:text-white text-black">Software Solutions</span>
+          <span className="text-[8px] text-muted-foreground -mt-1 dark:text-white text-black">Software Solutions</span>
         </div>
       </a>
     </motion.div>

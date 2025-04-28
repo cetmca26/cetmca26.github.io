@@ -110,7 +110,7 @@ export function LoginForm() {
             <a href="/contact" className="underline text-blue-600">
               fill out this contact form
             </a>{" "}
-            with your issue. Our support team will assist you.
+            with your issue. Our support team will assist you. Or Contact +91 7034365314
           </AlertDescription>
         </div>
         <Button

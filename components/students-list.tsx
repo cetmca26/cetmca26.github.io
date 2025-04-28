@@ -142,6 +142,59 @@ const studentsDatabefore = [
     "email": "yadhukrishnayadhu007@gmail.com"
   },
   {
+    "id": 60,
+    "name": "Zuhri Noor",
+    "avatar": "https://avatars.githubusercontent.com/u/85988261?v=4",
+    "role": "Software Engineer",
+    "skills": ["MERN", "Python", "Java", "SQL", "PHP"],
+    "bio": "MCA Student",
+    "github": "https://github.com/ZuhriNoor",
+    "linkedin": "https://www.linkedin.com/in/zuhrinoor",
+    "email": "zuhrinoor12@gmail.com"
+  },
+  {
+    "id": 1,
+    "name": "Aaron Gladston",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJsGKWyysBluzWMIcBxiV2PEn7N1HD2J7pXdKG5u9BzhoNTeZjU=s288-c-no",
+    "role": "Software Developer",
+    "skills": ["Python", "HTML", "CSS", "Java"],
+    "bio": "Aspiring software developer.",
+    "github": "https://github.com/AaronGladston",
+    "linkedin": "https://www.linkedin.com/in/aaron-gladston-8b5b62334/",
+    "email": "aarongladston2003@gmail.com"
+  }
+,{
+  "id": 7,
+  "name": "Abraham Peter",
+  "avatar": "https://avatars.githubusercontent.com/u/138754064?v=4",
+  "role": "Aspiring Aspirer",
+  "skills": ["Java", "Python", "HTML", "CSS", "JavaScript", "React"],
+  "bio": "Software engineer in training. Ctrl+C, Ctrl+V specialist",
+  "github": "https://github.com/abrahampeter10",
+  "linkedin": "https://www.linkedin.com/in/iamabrahampeter/",
+  "email": "abrahampeteronline@gmail.com"
+}
+,{
+  "id": 27,
+  "name": "Gautham B",
+  "avatar": "https://avatars.githubusercontent.com/u/55729626?v=4",
+  "role": "Web Developer",
+  "skills": [
+    "Javscript",
+    "Python",
+    "PHP",
+    "Java",
+    "MySQL",
+    "Django",
+    "Android app development"
+  ],
+  "bio": "Web Developer | Cybersecurity Student | Currently pursuing Master's degree at College of Engineering Trivandrum",
+  "github": "https://github.com/gigabyte1020",
+  "linkedin": "https://www.linkedin.com/in/gautham-b-670837219/",
+  "email": "gauthamb1020@gmail.com"
+}
+,    
+  {
     "id": "50",
     "name": "Sana S Navas",
     "avatar": "https://media.licdn.com/dms/image/v2/D5603AQEQZIfL6_GpQg/profile-displayphoto-shrink_400_400/B56ZZ03JkeGoAk-/0/1745717337396?e=2147483647&v=beta&t=97yrb7QKtuh_08JhwErKyAWmkRThkb8Uyl2VhaJU37k",
