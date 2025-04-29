@@ -14,6 +14,7 @@ import { db } from "@/lib/firebase"
 import { doc, getDoc, collection, query, where, getDocs, addDoc, serverTimestamp } from "firebase/firestore"
 import type { Quiz, Question, QuizAttempt } from "@/types/quiz"
 import { format, differenceInSeconds, addMinutes, isPast, isFuture } from "date-fns"
+import { QuizLeaderboard } from "@/components/quiz/quiz-leaderboard"
 
 export default function QuizPage() {
   const { id, quizId } = useParams() as { id: string; quizId: string }
@@ -35,10 +36,11 @@ export default function QuizPage() {
   const [score, setScore] = useState<number | null>(null)
   const [previousAttempt, setPreviousAttempt] = useState<QuizAttempt | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  
 
   useEffect(() => {
     async function fetchQuizAndQuestions() {
-      if (!user || !quizId) return
+      if (!quizId) return
 
       try {
         setLoading(true)
@@ -76,24 +78,27 @@ export default function QuizPage() {
           return
         }
 
-        // Check if user has already attempted this quiz
-        const attemptsQuery = query(
-          collection(db, "quizAttempts"),
-          where("quizId", "==", quizId),
-          where("userId", "==", user.uid),
-        )
+        // Only check for previous attempts if user is logged in
+        if (user) {
+          // Check if user has already attempted this quiz
+          const attemptsQuery = query(
+            collection(db, "quizAttempts"),
+            where("quizId", "==", quizId),
+            where("userId", "==", user.uid),
+          )
 
-        const attemptsSnapshot = await getDocs(attemptsQuery)
+          const attemptsSnapshot = await getDocs(attemptsQuery)
 
-        if (!attemptsSnapshot.empty) {
-          const attemptData = {
-            id: attemptsSnapshot.docs[0].id,
-            ...attemptsSnapshot.docs[0].data(),
-          } as QuizAttempt
+          if (!attemptsSnapshot.empty) {
+            const attemptData = {
+              id: attemptsSnapshot.docs[0].id,
+              ...attemptsSnapshot.docs[0].data(),
+            } as QuizAttempt
 
-          setPreviousAttempt(attemptData)
-          setLoading(false)
-          return
+            setPreviousAttempt(attemptData)
+            setLoading(false)
+            return
+          }
         }
 
         // Fetch questions
@@ -149,6 +154,12 @@ export default function QuizPage() {
   }, [quizStarted, quiz, startTime, endTime, quizEnded])
 
   const handleStartQuiz = () => {
+    // Check if user is logged in before starting the quiz
+    if (!user) {
+      setError("Please log in to take the quiz")
+      return
+    }
+    
     const now = new Date()
     setStartTime(now)
     setEndTime(addMinutes(now, quiz?.duration || 0))
@@ -270,6 +281,18 @@ export default function QuizPage() {
             </Button>
           </CardFooter>
         </Card>
+
+        {/* Only render leaderboard if user is logged in */}
+        <div className="mt-8">
+          {user ? (
+            <QuizLeaderboard quizId={quizId} />
+          ) : (
+            <div className="text-center py-12">
+              <h2 className="text-2xl font-semibold mb-4">Please login to view the leaderboard</h2>
+              <p className="text-muted-foreground">You must be logged in to see quiz rankings.</p>
+            </div>
+          )}
+        </div>
       </div>
     )
   }
@@ -306,10 +329,24 @@ export default function QuizPage() {
                 restart the quiz once it has begun.
               </AlertDescription>
             </Alert>
+
+            {/* Show login message if user is not logged in */}
+            {!user && (
+              <Alert className="bg-yellow-50 border-yellow-200">
+                <AlertCircle className="h-4 w-4 text-yellow-600" />
+                <AlertDescription className="text-yellow-700">
+                  Please log in to take this quiz and view the leaderboard.
+                </AlertDescription>
+              </Alert>
+            )}
           </CardContent>
           <CardFooter>
-            <Button onClick={handleStartQuiz} className="w-full" disabled={questions.length === 0}>
-              Start Quiz
+            <Button 
+              onClick={handleStartQuiz} 
+              className="w-full" 
+              disabled={questions.length === 0 || !user}
+            >
+              {user ? "Start Quiz" : "Login Required to Start"}
             </Button>
           </CardFooter>
         </Card>
@@ -390,6 +427,18 @@ export default function QuizPage() {
             </Button>
           </CardFooter>
         </Card>
+        
+        {/* Only render leaderboard if user is logged in */}
+        <div className="mt-8">
+          {user ? (
+            <QuizLeaderboard quizId={quizId} />
+          ) : (
+            <div className="text-center py-12">
+              <h2 className="text-2xl font-semibold mb-4">Please login to view the leaderboard</h2>
+              <p className="text-muted-foreground">You must be logged in to see quiz rankings.</p>
+            </div>
+          )}
+        </div>
       </div>
     )
   }

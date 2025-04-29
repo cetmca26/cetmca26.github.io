@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { MessageCircle } from 'lucide-react';
 
 export default function AdmissionHelpSection() {
   return (
@@ -36,16 +37,22 @@ export default function AdmissionHelpSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Link href="https://chat.whatsapp.com/examplegroup" target="_blank">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              {/* <Link href="https://chat.whatsapp.com/CVD1kDQE9Ld187C3gyEUwz" target="_blank">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 mt-3 mb-3">
                   Join WhatsApp Helpdesk
                 </Button>
-              </Link>
-              <Link href="https://forms.gle/exampleform" target="_blank">
+              </Link> */}
+              <Link href="https://chat.whatsapp.com/CVD1kDQE9Ld187C3gyEUwz" target="_blank">
+      <Button size="lg" className="bg-green-600 hover:bg-green-700 mt-3 mb-3 flex items-center gap-2">
+        <MessageCircle size={20} />
+        Join WhatsApp Helpdesk
+      </Button>
+    </Link>
+              {/* <Link href="https://forms.gle/exampleform" target="_blank">
                 <Button size="lg" variant="outline">
                   Show Interest in Crash Course
                 </Button>
-              </Link>
+              </Link> */}
             </motion.div>
 
             <motion.div
@@ -55,11 +62,10 @@ export default function AdmissionHelpSection() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <p>
-                📢 <strong>Coming Soon:</strong> Join our <strong>7-day Crash Course</strong> for just ₹250 – includes 3hr/day live
-                interactive sessions by 2024 LBS MCA rank holders.
+                📢 <strong>Coming Soon:</strong><strong>  Crash Course</strong> by 2024 LBS MCA rank holders.
               </p>
               <p className="mt-2">
-                💡 All doubts cleared, syllabus covered with PYQ practice. Join single classes for ₹50 each if you prefer.
+                💡 All doubts cleared, syllabus covered with PYQ practice. Stay Connected For More Updates.
               </p>
             </motion.div>
           </div>
@@ -85,6 +91,7 @@ export default function AdmissionHelpSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.9 }}
             >
+              <div className="mt-2 mb-2">Coming Soon...</div>
               <div>Full Entrance Support</div>
               <div>Crash Course + Live Mentorship</div>
             </motion.div>

@@ -5,9 +5,11 @@ import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
 import { TopPerformers } from "@/components/top-performers"
 
+
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
+ 
       <HeroSection />
 
       <section className="my-1 mb-5" style={{ marginTop: "-40px" , marginBottom: "200px"}}>

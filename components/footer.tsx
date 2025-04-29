@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Github, Mail, MapPin } from "lucide-react"
+import { CreditsBadge } from "./credits-badge"
 
 export default function Footer() {
   return (
@@ -77,6 +78,7 @@ export default function Footer() {
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()}happlle. All rights reserved.</p>
         </div>
+        <CreditsBadge />
       </div>
     </footer>
   )
