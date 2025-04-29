@@ -217,6 +217,141 @@ const studentsData = [
       "link": "https://github.com/gigabyte1020/CollegeMsgApp2"
     }
   ]
+},
+{
+  "id": 22,
+  "name": "Chaithanya K S",
+  "avatar": "https://avatars.githubusercontent.com/u/127503791?v=4",
+  "role": "ML Engineer",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "Data Analysis",
+    "Power BI",
+    "C",
+    "SQL"
+  ],
+  "bio": "Architect | MCA Student | Data Science Enthusiast. A professional architect with a foundation in creative design and a strong passion for data-driven solutions. Currently pursuing MCA at College of Engineering Trivandrum, with focus areas in Python, machine learning, and data analytics.",
+  "github": "https://github.com/chaithanya-ks2",
+  "linkedin": "https://www.linkedin.com/in/chaithanyaks2/",
+  "email": "chaithanya.ks2@gmail.com",
+  "experience": [
+    {
+      "id": 1,
+      "company": "IBM (Internship)",
+      "role": "Machine Learning Intern",
+      "duration": "Date not specified",
+      "description": "Completed internship focused on machine learning models and real-world applications."
+    },
+    {
+      "id": 2,
+      "company": "Freelance Architect",
+      "role": "Architect",
+      "duration": "2019–2024",
+      "description": "Worked on multiple residential architecture projects, including documentation and design."
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "College of Engineering Trivandrum",
+      "degree": "Bachelor of Architecture",
+      "duration": "2014-2019",
+      "description": "Designed hospitals, apartments, and urban spaces; dissertation on light pollution and thesis on LGBT Community Centre. Completed internships in residential and church architecture."
+    },
+    {
+      "id": 2,
+      "institution": "College of Engineering Trivandrum",
+      "degree": "MCA",
+      "duration": "2024-2026",
+      "description": "Focusing on programming, advanced data structures, and applied machine learning aligned with UN SDGs. Participated in national coding contests and internships."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Life Expectancy Prediction",
+      "description": "Explored health, economic, and social factors affecting life expectancy across 193 countries using machine learning.",
+      "technologies": ["Python"],
+      "link": "https://github.com/chaithanya-ks2/life-expectancy"
+    },
+    {
+      "id": 2,
+      "title": "Customer Analysis",
+      "description": "Classified customers based on likelihood to accept marketing campaigns using demographic and behavioral data.",
+      "technologies": ["Python"],
+      "link": "https://github.com/chaithanya-ks2/customer-analysis-segmentation"
+    },
+    {
+      "id": 3,
+      "title": "HR Analytics with Power BI",
+      "description": "Built an interactive dashboard for HR management insights using Power BI.",
+      "technologies": ["PowerBI"],
+      "link": "https://www.linkedin.com/posts/chaithanyaks2_hranalytics-powerbi-datadrivendecisions-activity-7126143583807565824-yGsV"
+    },
+    {
+      "id": 4,
+      "title": "AirBNB EDA",
+      "description": "Performed exploratory data analysis on Airbnb NYC 2019 data using Python and visualized results in Power BI.",
+      "technologies": ["Python", "PowerBI"],
+      "link": "https://github.com/chaithanya-ks2/Airbnb_NYC_2019_EDA"
+    },
+    {
+      "id": 5,
+      "title": "Global Super Store PowerBI Dashboard",
+      "description": "Created a six-page dashboard to visualize sales, customer trends, and product insights for strategic planning.",
+      "technologies": ["PowerBI"],
+      "link": "https://github.com/chaithanya-ks2/Global-SuperStore-PowerBi-Project"
+    }
+  ]
+}
+
+,{
+  "id": 18,
+  "name": "Aswin R S",
+  "avatar": "https://avatars.githubusercontent.com/u/176476526?s=400&u=720ef59f8cff760ae6abe4f5688218c470194156&v=4",
+  "role": "Aspiring DevOps Engineer",
+  "skills": [
+    "Python",
+    "Java",
+    "C",
+    "Html",
+    "CSS",
+    "Javascript"
+  ],
+  "bio": "MCA student with a focus on DevOps and a strong passion for the transformative potential within the automotive industry. Eager to apply my technical skills to streamline software development and deployment for innovative automotive solutions.",
+  "github": "https://github.com/notmaal",
+  "linkedin": "https://www.linkedin.com/in/aswin-rs-84a786337/",
+  "email": "aswin4147@gmail.com",
+  "experience": [
+    // {
+    //   "id": 1,
+    //   "company": ".",
+    //   "role": ".",
+    //   "duration": ".",
+    //   "description": "."
+    // }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "College Of Engineering, Trivandrum",
+      "degree": "MCA",
+      "duration": "2024 - 2026",
+      "description": "Pursuing..."
+    }
+  ],
+  "projects": [
+    // {
+    //   "id": 1,
+    //   "title": ".",
+    //   "description": ".",
+    //   "technologies": [
+    //     "."
+    //   ],
+    //   "link": "https://youtu.be/dQw4w9WgXcQ?si=TQ-sfaINlYrEz1LK"
+    // }
+  ]
 }
 ,
   {

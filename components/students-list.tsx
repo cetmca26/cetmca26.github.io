@@ -193,7 +193,42 @@ const studentsDatabefore = [
   "linkedin": "https://www.linkedin.com/in/gautham-b-670837219/",
   "email": "gauthamb1020@gmail.com"
 }
-,    
+,
+{
+  "id": 18,
+  "name": "Aswin R S",
+  "avatar": "https://avatars.githubusercontent.com/u/176476526?s=400&u=720ef59f8cff760ae6abe4f5688218c470194156&v=4",
+  "role": "Aspiring DevOps Engineer",
+  "skills": [
+    "Python",
+    "Java",
+    "C",
+    "Html",
+    "CSS",
+    "Javascript"
+  ],
+  "bio": "MCA student with a focus on DevOps and a strong passion for the transformative potential within the automotive industry. Eager to apply my technical skills to streamline software development and deployment for innovative automotive solutions.",
+  "github": "https://github.com/notmaal",
+  "linkedin": "https://www.linkedin.com/in/aswin-rs-84a786337/",
+  "email": "aswin4147@gmail.com"
+}
+,
+{
+  "id": "22",
+  "name": "Chaithanya K S",
+  "avatar": "https://avatars.githubusercontent.com/u/127503791?v=4",
+  "role": "ML Engineer",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "Data Analysis"
+  ],
+  "bio": "Architect | MCA Student | Data Science Enthusiast\n\nI’m a professional architect with a strong foundation in design and creative problem-solving. Currently pursuing an MCA at CET Trivandrum, I’ve expanded my skills to include Python, C, SQL, Power BI, and machine learning.\n\nWith my unique blend of architectural experience and technical expertise, I’m excited to explore how design and data can converge to solve real-world challenges.",
+  "github": "https://github.com/chaithanya-ks2",
+  "linkedin": "https://www.linkedin.com/in/chaithanyaks2/",
+  "email": "chaithanya.ks2@gmail.com"
+}
+,
   {
     "id": "50",
     "name": "Sana S Navas",
