@@ -25,6 +25,7 @@ export default function QuizPage() {
   const [questions, setQuestions] = useState<Question[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const [quizStarted, setQuizStarted] = useState(false)
   const [quizEnded, setQuizEnded] = useState(false)
@@ -82,8 +83,15 @@ export default function QuizPage() {
         })) as Question[]
         setQuestions(questionsData)
 
-        // Check if user is logged in and has attempted this quiz
+        // Check if user is logged in
         if (user) {
+          // Check if user is an admin
+          const userDoc = await getDoc(doc(db, "users", user.uid))
+          if (userDoc.exists() && userDoc.data().role === "admin") {
+            setIsAdmin(true)
+          }
+
+          // Check if user has attempted this quiz
           const attemptsQuery = query(
             collection(db, "quizAttempts"),
             where("quizId", "==", quizId),
@@ -246,7 +254,7 @@ export default function QuizPage() {
   }
 
   // Show previous attempt or expired quiz results
-  if (previousAttempt || quizExpired) {
+  if (previousAttempt || (quizExpired && !isAdmin) || (quizExpired && isAdmin)) {
     return (
       <div className="container mx-auto px-4 py-8">
         <Button variant="ghost" className="mb-4" onClick={() => router.push(`/quiz/groups/${id}`)}>
@@ -258,8 +266,17 @@ export default function QuizPage() {
           <CardHeader>
             <CardTitle>{quiz.name}</CardTitle>
             <CardDescription>
-              {previousAttempt ? "You have already completed this quiz." : "This quiz has ended."}
+              {isAdmin && !previousAttempt 
+                ? "Admin View - Quiz Results" 
+                : previousAttempt 
+                  ? "You have already completed this quiz." 
+                  : "This quiz has ended."}
             </CardDescription>
+            {isAdmin && !previousAttempt && (
+              <p className="text-xs text-muted-foreground mt-1">
+                You are viewing this as an administrator
+              </p>
+            )}
           </CardHeader>
           <CardContent className="space-y-4">
             {previousAttempt ? (
@@ -333,8 +350,8 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* Show questions for expired quiz without user attempt */}
-            {questions.length > 0 && quizExpired && !previousAttempt && (
+            {/* Show questions for expired quiz without user attempt or for admin */}
+            {questions.length > 0 && ((quizExpired && !previousAttempt) || (isAdmin && !previousAttempt)) && (
               <div className="space-y-4 mt-6">
                 <h3 className="text-lg font-medium">Quiz Questions</h3>
                 {questions.map((question, index) => (
@@ -376,9 +393,9 @@ export default function QuizPage() {
           </CardFooter>
         </Card>
 
-        {/* Only render leaderboard if user is logged in */}
+        {/* Render leaderboard for logged in users and admins */}
         <div className="mt-8">
-          {user ? (
+          {user || isAdmin ? (
             <QuizLeaderboard quizId={quizId} />
           ) : (
             <div className="text-center py-12">
@@ -403,6 +420,11 @@ export default function QuizPage() {
           <CardHeader>
             <CardTitle>{quiz.name}</CardTitle>
             <CardDescription>{quiz.description}</CardDescription>
+            {isAdmin && (
+              <p className="text-xs text-muted-foreground mt-1">
+                You are viewing this as an administrator
+              </p>
+            )}
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -424,7 +446,7 @@ export default function QuizPage() {
               </AlertDescription>
             </Alert>
 
-            {/* Show login message if user is not logged in */}
+            {/* Show login message if user is not logged in and not admin */}
             {!user && (
               <Alert className="bg-yellow-50 border-yellow-200">
                 <AlertCircle className="h-4 w-4 text-yellow-600" />
@@ -433,8 +455,18 @@ export default function QuizPage() {
                 </AlertDescription>
               </Alert>
             )}
+            
+            {/* Special message for admins */}
+            {isAdmin && (
+              <Alert className="bg-blue-50 border-blue-200">
+                <AlertCircle className="h-4 w-4 text-blue-600" />
+                <AlertDescription className="text-blue-700">
+                  As an administrator, you can view the quiz questions and leaderboard without taking the quiz.
+                </AlertDescription>
+              </Alert>
+            )}
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex flex-col gap-3">
             <Button 
               onClick={handleStartQuiz} 
               className="w-full" 
@@ -442,8 +474,26 @@ export default function QuizPage() {
             >
               {user ? "Start Quiz" : "Login Required to Start"}
             </Button>
+            
+            {/* Special button for admins to view results without taking the quiz */}
+            {isAdmin && (
+              <Button 
+                onClick={() => setQuizExpired(true)} 
+                variant="outline"
+                className="w-full"
+              >
+                View Quiz Results (Admin)
+              </Button>
+            )}
           </CardFooter>
         </Card>
+        
+        {/* Show leaderboard for admins even before taking the quiz */}
+        {isAdmin && (
+          <div className="mt-8">
+            <QuizLeaderboard quizId={quizId} />
+          </div>
+        )}
       </div>
     )
   }
@@ -522,9 +572,9 @@ export default function QuizPage() {
           </CardFooter>
         </Card>
         
-        {/* Only render leaderboard if user is logged in */}
+        {/* Render leaderboard for logged in users and admins */}
         <div className="mt-8">
-          {user ? (
+          {user || isAdmin ? (
             <QuizLeaderboard quizId={quizId} />
           ) : (
             <div className="text-center py-12">
