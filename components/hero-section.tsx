@@ -28,7 +28,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                The official website for the MCA batch of 2026 at the College of Engineering Trivandrum (CET)
+                The official website for the MCA batch of 2026 at the   (CET)
               </motion.p>
             </div>
             <motion.div
@@ -72,7 +72,7 @@ export function HeroSection() {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1, delay: 0.9 }}
   >
-    <div>College of Engineering</div>
+    <div>CET</div>
     <div>Trivandrum, Kerala</div>
   </motion.div>
 

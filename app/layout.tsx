@@ -13,7 +13,7 @@ import { AuthProvider } from "@/contexts/auth-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "CET MCA 26 - College of Engineering Trivandrum",
+  title: "CET MCA 26 -  ",
   description:
     "CET MCA 26 provides high-quality resources for MCA students, including lab programs, notes, previous year question papers, and much more.",
   keywords: [

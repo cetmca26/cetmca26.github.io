@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h1 className="text-4xl font-semibold mb-4">MCA <span style={{ color: '#28cee3' }}>26</span></h1>
             <p className="text-sm text-muted-foreground">
-              Official website for the MCA batch of 2026 at the College of Engineering Trivandrum (CET).
+              Official website for the MCA batch of 2026 at the   (CET).
             </p>
           </div>
           <div>
@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>College of Engineering Trivandrum, Kerala, India</span>
+                <span> , Kerala, India</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />

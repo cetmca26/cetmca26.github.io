@@ -24,14 +24,14 @@ const studentsData = [
     email: "deepakdeepam@gmail.com",
     bio: "Passionate about web development and open source contributions. I enjoy building scalable web applications and contributing to the developer community.",
     experience: [
-      {
-        id: 1,
-        company: "CETMCA26 Community",
-        role: "Full Stack Developer",
-        duration: "2024 - Present",
-        description:
-          "Developing and maintaining web applications using React, Node.js, and MongoDB. Implementing new features and optimizing existing codebase for better performance.",
-      },
+      // {
+      //   id: 1,
+      //   company: "CETMCA26 Community",
+      //   role: "Full Stack Developer",
+      //   duration: "2024 - Present",
+      //   description:
+      //     "Developing and maintaining web applications using React, Node.js, and MongoDB. Implementing new features and optimizing existing codebase for better performance.",
+      // },
       // {
       //   id: 2,
       //   company: "WebSolutions Inc.",

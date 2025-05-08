@@ -16,7 +16,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-2">About Us</h2>
           <p className="text-muted-foreground text-xl mt-3  mx-auto">
-          Welcome to CETMCA26! We are a vibrant community of aspiring tech enthusiasts from the College of Engineering Trivandrum, MCA 2026 batch. Our mission is to foster collaboration, learning, and innovation among our peers. Stay connected with us at cetmca26.live
+          Welcome to CETMCA26! We are a vibrant community of aspiring tech enthusiasts from the  , MCA 2026 batch. Our mission is to foster collaboration, learning, and innovation among our peers. Stay connected with us at cetmca26.live
           Our website contains a wide range of resources to support your academic journey, including notes, syllabus materials, entrance preparation guides, project ideas, and much more. Explore to make the most of these valuable resources!
           </p>
          
@@ -33,8 +33,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-2">Explore CETMCA <span style={{ color: '#28cee3' }}>26</span></h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover resources, projects, and connect with the MCA batch of 2026 at the College of Engineering
-            Trivandrum.
+            Discover resources, projects, and connect with the MCA batch of 2026 at the CET.
           </p>
         </div>
 
@@ -63,7 +62,7 @@ export default function Home() {
             </CardFooter>
           </Card>
 
-          <Card className="group hover:shadow-lg transition-all duration-300">
+          {/* <Card className="group hover:shadow-lg transition-all duration-300">
             <CardHeader className="pb-2">
               <CardTitle className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-[#28cee3]" />
@@ -84,7 +83,7 @@ export default function Home() {
                 </Button>
               </Link>
             </CardFooter>
-          </Card>
+          </Card> */}
 
           <Card className="group hover:shadow-lg transition-all duration-300">
             <CardHeader className="pb-2">
@@ -178,6 +177,7 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
+        
           <TopPerformers />
         </div>
       </section>

@@ -179,7 +179,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium">Address</h3>
                   <p className="text-muted-foreground mt-1">
-                    College of Engineering Trivandrum
+                     
                     <br />
                     Engineering College P.O
                     <br />

@@ -36,6 +36,7 @@ export default function QuizPage() {
   const [score, setScore] = useState<number | null>(null)
   const [previousAttempt, setPreviousAttempt] = useState<QuizAttempt | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const [quizExpired, setQuizExpired] = useState(false)
   
 
   useEffect(() => {
@@ -72,15 +73,17 @@ export default function QuizPage() {
           return
         }
 
-        if (isPast(endTime)) {
-          setError("This quiz has ended.")
-          setLoading(false)
-          return
-        }
+        // Fetch questions regardless of quiz status to show them in the results
+        const questionsQuery = query(collection(db, "questions"), where("quizId", "==", quizId))
+        const questionsSnapshot = await getDocs(questionsQuery)
+        const questionsData = questionsSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Question[]
+        setQuestions(questionsData)
 
-        // Only check for previous attempts if user is logged in
+        // Check if user is logged in and has attempted this quiz
         if (user) {
-          // Check if user has already attempted this quiz
           const attemptsQuery = query(
             collection(db, "quizAttempts"),
             where("quizId", "==", quizId),
@@ -96,22 +99,15 @@ export default function QuizPage() {
             } as QuizAttempt
 
             setPreviousAttempt(attemptData)
-            setLoading(false)
-            return
           }
         }
 
-        // Fetch questions
-        const questionsQuery = query(collection(db, "questions"), where("quizId", "==", quizId))
-
-        const questionsSnapshot = await getDocs(questionsQuery)
-
-        const questionsData = questionsSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as Question[]
-
-        setQuestions(questionsData)
+        // Check if quiz has ended
+        if (isPast(endTime)) {
+          setQuizExpired(true)
+          setLoading(false)
+          return
+        }
 
         // Initialize answers array
         setAnswers(
@@ -249,7 +245,8 @@ export default function QuizPage() {
     )
   }
 
-  if (previousAttempt) {
+  // Show previous attempt or expired quiz results
+  if (previousAttempt || quizExpired) {
     return (
       <div className="container mx-auto px-4 py-8">
         <Button variant="ghost" className="mb-4" onClick={() => router.push(`/quiz/groups/${id}`)}>
@@ -260,20 +257,117 @@ export default function QuizPage() {
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
             <CardTitle>{quiz.name}</CardTitle>
-            <CardDescription>You have already completed this quiz.</CardDescription>
+            <CardDescription>
+              {previousAttempt ? "You have already completed this quiz." : "This quiz has ended."}
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-center p-6 bg-primary/5 rounded-md">
-              <div className="text-center">
-                <p className="text-lg font-medium mb-2">Your Score</p>
-                <p className="text-4xl font-bold text-primary">
-                  {previousAttempt.score} / {questions.length}
-                </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Completed on {format(new Date(previousAttempt.endTime), "MMMM d, yyyy h:mm a")}
-                </p>
+            {previousAttempt ? (
+              <div className="flex items-center justify-center p-6 bg-primary/5 rounded-md">
+                <div className="text-center">
+                  <p className="text-lg font-medium mb-2">Your Score</p>
+                  <p className="text-4xl font-bold text-primary">
+                    {previousAttempt.score} / {questions.length}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Completed on {format(new Date(previousAttempt.endTime), "MMMM d, yyyy h:mm a")}
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="flex items-center justify-center p-6 bg-primary/5 rounded-md">
+                <div className="text-center">
+                  <p className="text-lg font-medium mb-2">Quiz Ended</p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    This quiz ended on {format(new Date(quiz.endTime), "MMMM d, yyyy h:mm a")}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {questions.length > 0 && previousAttempt && (
+              <div className="space-y-4 mt-6">
+                <h3 className="text-lg font-medium">Question Summary</h3>
+                {questions.map((question, index) => {
+                  const answer = previousAttempt.answers.find((a) => a.questionId === question.id)
+                  const isCorrect = answer?.selectedAnswer === question.correctAnswer
+
+                  return (
+                    <div key={question.id} className="border rounded-md p-4">
+                      <div className="flex items-start gap-2">
+                        {isCorrect ? (
+                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        ) : (
+                          <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                        )}
+                        <div>
+                          <p className="font-medium mb-2">
+                            {index + 1}. {question.question}
+                          </p>
+                          <div className="space-y-1 text-sm">
+                            <p className={question.correctAnswer === "A" ? "text-green-600 font-medium" : ""}>
+                              A: {question.optionA}
+                              {question.correctAnswer === "A" && " (Correct)"}
+                            </p>
+                            <p className={question.correctAnswer === "B" ? "text-green-600 font-medium" : ""}>
+                              B: {question.optionB}
+                              {question.correctAnswer === "B" && " (Correct)"}
+                            </p>
+                            <p className={question.correctAnswer === "C" ? "text-green-600 font-medium" : ""}>
+                              C: {question.optionC}
+                              {question.correctAnswer === "C" && " (Correct)"}
+                            </p>
+                            <p className={question.correctAnswer === "D" ? "text-green-600 font-medium" : ""}>
+                              D: {question.optionD}
+                              {question.correctAnswer === "D" && " (Correct)"}
+                            </p>
+                          </div>
+                          {answer?.selectedAnswer && answer.selectedAnswer !== question.correctAnswer && (
+                            <p className="text-red-500 text-sm mt-2">You selected: {answer.selectedAnswer}</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
+            {/* Show questions for expired quiz without user attempt */}
+            {questions.length > 0 && quizExpired && !previousAttempt && (
+              <div className="space-y-4 mt-6">
+                <h3 className="text-lg font-medium">Quiz Questions</h3>
+                {questions.map((question, index) => (
+                  <div key={question.id} className="border rounded-md p-4">
+                    <div className="flex items-start gap-2">
+                      <div>
+                        <p className="font-medium mb-2">
+                          {index + 1}. {question.question}
+                        </p>
+                        <div className="space-y-1 text-sm">
+                          <p className={question.correctAnswer === "A" ? "text-green-600 font-medium" : ""}>
+                            A: {question.optionA}
+                            {question.correctAnswer === "A" && " (Correct)"}
+                          </p>
+                          <p className={question.correctAnswer === "B" ? "text-green-600 font-medium" : ""}>
+                            B: {question.optionB}
+                            {question.correctAnswer === "B" && " (Correct)"}
+                          </p>
+                          <p className={question.correctAnswer === "C" ? "text-green-600 font-medium" : ""}>
+                            C: {question.optionC}
+                            {question.correctAnswer === "C" && " (Correct)"}
+                          </p>
+                          <p className={question.correctAnswer === "D" ? "text-green-600 font-medium" : ""}>
+                            D: {question.optionD}
+                            {question.correctAnswer === "D" && " (Correct)"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </CardContent>
           <CardFooter>
             <Button onClick={() => router.push(`/quiz/groups/${id}`)} className="w-full">
